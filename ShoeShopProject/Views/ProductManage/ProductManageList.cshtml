@@ -1,0 +1,134 @@
+﻿@using ShoeShopProject.Models;
+@using ShoeShopProject.ViewModels;
+@{
+    List<ProductManageView> productList = ViewBag.ProductList;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Users List - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                    <div class="container-fluid px-4">
+                        <div class="page-header-content">
+                            <div class="row align-items-center justify-content-between pt-3">
+                                <div class="col-auto mb-3">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="shopping-bag"></i></div>
+                                        Danh sách sản phẩm
+                                    </h1>
+                                </div>
+                                <div class="col-12 col-xl-auto mb-3">
+                                    <a class="btn btn-sm btn-light text-primary" href="@Url.Action("PropertyManageList", "ProductManage")">
+                                        <i class="me-1" data-feather="database"></i>
+                                        Quản lý thành phần
+                                    </a>
+                                    <a class="btn btn-sm btn-light text-primary" href="@Url.Action("AddProductManage", "ProductManage")">
+                                        <i class="me-1" data-feather="plus-square"></i>
+                                        Thêm sản phẩm mới
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-fluid px-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th colspan="1">Mã sản phẩm</th>
+                                        <th colspan="4">Tên sản phẩm</th>
+                                        <th colspan="2">Phân loại</th>
+                                        <th colspan="2">Thương hiệu</th>
+                                        <th colspan="2">Giá tiền</th>
+                                        <th colspan="2">Số lượng</th>
+                                        <th colspan="2">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (productList != null && productList.Count > 0)
+                                    {
+                                        foreach( ProductManageView product in productList)
+                                        {
+                                            <tr>
+                                                <td colspan="1"># @product.Id</td>
+                                                <td colspan="4">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar me-2"><img class="avatar-img img-fluid" src="@product.Image" /></div>
+                                                        @product.Name
+                                                    </div>
+                                                </td>
+                                                <td colspan="2">@product.Categories</td>
+                                                <td colspan="2">@product.Brand</td>
+                                                <td colspan="2">@Constants.ConvertCurrency(product.price)</td>
+                                                <td colspan="2">@product.totalStock</td>
+                                                <td colspan="2">
+                                                    <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="@Url.Action("UpdateProductManage", "ProductManage", new{productID = product.Id})"><i data-feather="edit"></i></a>
+                                                    <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteProduct('@product.Id')"><i data-feather="trash-2"></i></button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        function DeleteProduct(productID) {
+            var formData = new FormData();
+            formData.append('productID', productID);
+
+            $.ajax({
+                url: "/ProductManage/DeleteProductInfo",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Xóa sản phẩm thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể xóa sản phẩm. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

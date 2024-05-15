@@ -1,0 +1,329 @@
+﻿@using ShoeShopProject.Models;
+@using ShoeShopProject.ViewModels;
+@{
+    var sumTotalAmount = ViewBag.SumTotalAmount;
+    var sumTotalOrder = ViewBag.SumTotalOrder;
+    var sumTotalProduct = ViewBag.SumTotalProduct;
+    var sumTotalOrderSuccess = ViewBag.SumTotalOrderSuccess;
+    DateTime startDate = ViewBag.StartDate == null ? DateTime.Now : ViewBag.StartDate;
+    DateTime endDate = ViewBag.EndDate == null ? DateTime.Now : ViewBag.EndDate;
+    List<OrderManageView> listLastestOrder = ViewBag.ListLastestOrder;
+    List<decimal> ListRevenueInYear = ViewBag.ListRevenueInYear;
+    string jsonData = string.Join(",", ListRevenueInYear);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Affiliate Dashboard - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <!-- Main page content-->
+                <div class="container-xl px-4 mt-5">
+                    <!-- Custom page header alternative example-->
+                    <div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-4">
+                        <div class="me-4 mb-3 mb-sm-0">
+                            <h1 class="mb-0">Thống kê cửa hàng</h1>
+                            <div class="small" id="realTimeInfo">
+                                <span class="fw-500 text-primary" id="dayOfWeek"></span>
+                                &middot; <span id="currentDate"></span> &middot; <span id="currentTime"></span>
+                            </div>
+                        </div>
+                        <!-- Date range picker example-->
+                        <div class="input-group input-group-joined border-0 shadow" style="width: 18.5rem">
+                            <input class="form-control" id="startDate" type="date" onchange="validateDate()" value="@startDate.ToString("yyyy-MM-dd")" />
+                            <input class="form-control" id="endDate" type="date" onchange="validateDate()" value="@endDate.ToString("yyyy-MM-dd")" />
+                        </div>
+                    </div>
+                    <!-- Illustration dashboard card example-->
+                    <div class="card card-waves mb-4 mt-5">
+                        <div class="card-body p-5">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col">
+                                    <h2 class="text-primary">Chào mừng, NEXUS SNEAKERS</h2>
+                                    <p class="text-gray-700">Chào bạn, dưới đây là thống kê cửa hàng trong thời gian qua! Bạn có thể xem doanh số bán hàng, sản phẩm, đơn hàng và tải xuống báo cáo tổng quan của cửa hàng hiện tại.</p>
+                                </div>
+                                <div class="col d-none d-lg-block mt-xxl-n4"><img class="img-fluid px-xl-4 mt-xxl-n5" src="/assets/img/illustrations/statistics.svg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <!-- Dashboard info widget 1-->
+                            <div class="card border-start-lg border-start-primary h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold text-primary mb-1">Tổng doanh thu</div>
+                                            <div class="h2">@sumTotalAmount</div>
+                                            <div class="text-xs fw-bold text-success d-inline-flex align-items-center">
+                                                <i class="me-1" data-feather="trending-up"></i>
+                                                12%
+                                            </div>
+                                        </div>
+                                        <div class="ms-2"><i class="fas fa-dollar-sign fa-2x text-gray-200"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <!-- Dashboard info widget 2-->
+                            <div class="card border-start-lg border-start-secondary h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold text-secondary mb-1">Tổng số đơn hàng</div>
+                                            <div class="h2">@sumTotalOrder</div>
+                                            <div class="text-xs fw-bold text-danger d-inline-flex align-items-center">
+                                                <i class="me-1" data-feather="trending-down"></i>
+                                                3%
+                                            </div>
+                                        </div>
+                                        <div class="ms-2"><i class="fas fa-cart-shopping fa-2x text-gray-200"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <!-- Dashboard info widget 4-->
+                            <div class="card border-start-lg border-start-info h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold text-info mb-1">Tổng đơn hàng thành công</div>
+                                            <div class="h2">@sumTotalOrderSuccess</div>
+                                            <div class="text-xs fw-bold text-danger d-inline-flex align-items-center">
+                                                <i class="me-1" data-feather="trending-down"></i>
+                                                1%
+                                            </div>
+                                        </div>
+                                        <div class="ms-2"><i class="fas fa-percentage fa-2x text-gray-200"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <!-- Dashboard info widget 3-->
+                            <div class="card border-start-lg border-start-success h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold text-success mb-1">Tổng sản phẩm đã bán</div>
+                                            <div class="h2">@sumTotalProduct</div>
+                                            <div class="text-xs fw-bold text-success d-inline-flex align-items-center">
+                                                <i class="me-1" data-feather="trending-up"></i>
+                                                12%
+                                            </div>
+                                        </div>
+                                        <div class="ms-2"><i class="fas fa-shoe-prints fa-2x text-gray-200"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <!-- Report summary card example-->
+                            <div class="card mb-4">
+                                <div class="card-header">Đơn hàng gần đây</div>
+                                <div class="list-group list-group-flush small">
+                                    @if (listLastestOrder != null && listLastestOrder.Count > 0)
+                                    {
+                                        foreach (OrderManageView order in listLastestOrder)
+                                        {
+                                            <a class="list-group-item list-group-item-action">
+                                                <i class="fas fa-hashtag fa-fw text-blue me-2"></i>
+                                                @order.orderId &middot; @order.customerName &middot; @Constants.ConvertCurrency(order.totalAmount)
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 mb-4">
+                            <!-- Area chart example-->
+                            <div class="card mb-4">
+                                <div class="card-header">Thống kê doanh thu năm @DateTime.Now.Year</div>
+                                <div class="card-body">
+                                    <div class="chart-area"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/demo/chart-area-demo.js"></script>
+    <script src="/assets/demo/chart-bar-demo.js"></script>
+    <script src="/assets/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
+    <script src="/js/litepicker.js"></script>
+    <script>
+        function updateRealTimeInfo() {
+            // Get the current date and time
+            var now = new Date();
+
+            // Format the date
+            var dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][now.getDay()];
+            var currentDate = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
+            var currentTime = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+
+            // Update the HTML elements with the current date and time
+            document.getElementById('dayOfWeek').textContent = dayOfWeek;
+            document.getElementById('currentDate').textContent = currentDate;
+            document.getElementById('currentTime').textContent = currentTime;
+        }
+
+        // Call the updateRealTimeInfo function initially
+        updateRealTimeInfo();
+        // Update the real-time information every second
+        setInterval(updateRealTimeInfo, 1000);
+        
+        function validateDate() {
+            var startDate = new Date(document.getElementById("startDate").value);
+            var endDate = new Date(document.getElementById("endDate").value);
+
+            if (startDate > endDate) {
+                showAlert("Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc", 'warning');
+                // Reset end date to start date
+                document.getElementById("endDate").value = document.getElementById("startDate").value;
+                endDate = new Date(document.getElementById("endDate").value);
+            }
+
+            // Convert dates to ISO 8601 format
+            var startDateISO = startDate.toISOString().split('T')[0];
+            var endDateISO = endDate.toISOString().split('T')[0];
+
+            // Redirect to Dashboard page with validated dates
+            location.href = "/AdminManage/Dashboard?startDate=" + startDateISO + "&endDate=" + endDateISO;
+        }
+
+        // Area Chart Example
+        var ctx = document.getElementById("myAreaChart");
+        var myLineChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: [
+                    "Tháng 1",
+                    "Tháng 2",
+                    "Tháng 3",
+                    "Tháng 4",
+                    "Tháng 5",
+                    "Tháng 6",
+                    "Tháng 7",
+                    "Tháng 8",
+                    "Tháng 9",
+                    "Tháng 10",
+                    "Tháng 11",
+                    "Tháng 12"
+                ],
+                datasets: [{
+                    label: "Earnings",
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(0, 97, 242, 0.05)",
+                    borderColor: "rgba(0, 97, 242, 1)",
+                    pointRadius: 3,
+                    pointBackgroundColor: "rgba(0, 97, 242, 1)",
+                    pointBorderColor: "rgba(0, 97, 242, 1)",
+                    pointHoverRadius: 3,
+                    pointHoverBackgroundColor: "rgba(0, 97, 242, 1)",
+                    pointHoverBorderColor: "rgba(0, 97, 242, 1)",
+                    pointHitRadius: 10,
+                    pointBorderWidth: 2,
+                    data: [
+                        @jsonData
+                    ]
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 25,
+                        top: 25,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        time: {
+                            unit: "date"
+                        },
+                        gridLines: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 7
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            maxTicksLimit: 5,
+                            padding: 10,
+                            // Include a dollar sign in the ticks
+                            callback: function (value, index, values) {
+                                return number_format(value) + "đ";
+                            }
+                        },
+                        gridLines: {
+                            color: "rgb(234, 236, 244)",
+                            zeroLineColor: "rgb(234, 236, 244)",
+                            drawBorder: false,
+                            borderDash: [2],
+                            zeroLineBorderDash: [2]
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    titleMarginBottom: 10,
+                    titleFontColor: "#6e707e",
+                    titleFontSize: 14,
+                    borderColor: "#dddfeb",
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    intersect: false,
+                    mode: "index",
+                    caretPadding: 10,
+                    callbacks: {
+                        label: function (tooltipItem, chart) {
+                            var datasetLabel =
+                                chart.datasets[tooltipItem.datasetIndex].label || "";
+                            return datasetLabel + ": " + number_format(tooltipItem.yLabel) + "đ";
+                        }
+                    }
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>

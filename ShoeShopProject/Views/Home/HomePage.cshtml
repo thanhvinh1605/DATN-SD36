@@ -1,0 +1,313 @@
+﻿@using ShoeShopProject.Data;
+@using System.Collections;
+@{
+    List<Product> listProducts = ViewBag.ListProducts;
+    List<Color> listColors = ViewBag.ListColors;
+    List<Size> listSizes = ViewBag.ListSizes;
+    List<Brand> listBrands = ViewBag.ListBrands;
+    List<Slider> listSliders = ViewBag.ListSliders;
+
+    var gap = ViewBag.gap;
+    var totalPage = ViewBag.totalPage;
+    var currentPage = ViewBag.page;
+    string searchCondition = ViewBag.SearchCodition;
+    if (searchCondition == null) searchCondition = String.Empty;
+    var categorySrch = ViewBag.CategorySearch;
+    if (categorySrch == null) categorySrch = -1;
+    List<int>? listChooseBrand = ViewBag.ListChooseBrand;
+    List<int>? listChooseSize = ViewBag.ListChooseSize;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+            .pagination li {
+                margin: 0 5px;
+            }
+
+            .pagination a {
+                color: #333;
+                text-decoration: none;
+                padding: 5px 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+                .pagination a:hover {
+                    background-color: #f5f5f5;
+                }
+
+            .pagination .active a {
+                background-color: #007bff;
+                color: #fff;
+                border-color: #007bff;
+            }
+    </style>
+</head>
+<body class="nav-fixed sidenav-toggled">
+    @Html.Partial("_Header")
+    <!--Content-->
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="mb-4">
+                    <div class="banner">
+                        <div class="slider">
+                            @if (listSliders != null && listSliders.Count > 0)
+                            {
+                                <a href="@Url.Action("HomePage", "Home")"><img src="@listSliders[0].Image" alt=""></a>
+                                @foreach(Slider slider in listSliders)
+                                {
+                                    <a href="@Url.Action("HomePage", "Home")"><img src="@slider.Image" alt=""></a>
+                                }
+                            }
+                        </div>
+                        <button class="prev" onclick="prevSlide()">&#10094;</button>
+                        <button class="next" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                </header>
+                <!-- Search Bar -->
+                <div class="row mb-4 d-flex justify-content-center">
+                    <div class="col-sm-5 me-2">
+                        <input type="text" class="form-control me-2" id="searchCondition" value="@searchCondition" placeholder="Tìm kiếm tên sản phẩm, thương hiệu,...">
+                    </div>
+                    <div class="col-sm-1 ms-2">
+                        <button type="button" class="btn btn-primary" onclick="SearchProduct()">Tìm kiếm</button>
+                    </div>
+                </div>
+                <!-- Main page content-->
+                <div class="row px-10">
+                    <div class="col-lg-2">
+                        <!-- Filter by Brand -->
+                        <div class="mb-4">
+                            <h5>Thương hiệu</h5>
+                            <div class="form-check card-scrollable">
+                                <div class="row">
+                                    @if (listBrands != null && listBrands.Count > 0)
+                                    {
+                                        foreach (Brand b in listBrands)
+                                        {
+                                            <div class="col-sm-6">
+                                                <input class="form-check-input" type="checkbox" name="brand" value="@b.Id" checked="@(listChooseBrand != null && listChooseBrand.Contains(b.Id))" id="brand_@b.Id">
+                                                <label class="form-check-label small fw-bold" for="brand_@b.Id">
+                                                    @b.Name
+                                                </label>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Filter by Size -->
+                        <div class="mb-4">
+                            <h5>Size</h5>
+                            <div class="form-check card-scrollable">
+                                <div class="row">
+                                    @if (listSizes != null && listSizes.Count > 0)
+                                    {
+                                        foreach (Size s in listSizes)
+                                        {
+                                            <div class="col-sm-6">
+                                                <input class="form-check-input" type="checkbox" name="size" value="@s.Id" checked="@(listChooseSize != null && listChooseSize.Contains(s.Id))" id="size_@s.Id">
+                                                <label class="form-check-label small fw-bold" for="size_@s.Id">
+                                                    @s.SizeVal
+                                                </label>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="card-scrollable">
+                                <div class="row mb-2">
+                                    <div class="col-6 text-start">
+                                        <a class="btn btn-sm btn-outline-orange" href="@Url.Action("HomePage", "Home", new {sort = "desc"})">Giá giảm dần</a>
+                                    </div>
+                                    <div class="col-6 text-start">
+                                        <a class="btn btn-sm btn-outline-primary" href="@Url.Action("HomePage", "Home", new {sort = "asc"})">Giá tăng dần</a>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <a class="btn btn-outline-dark" href="/Home/HomePage@(categorySrch >= 0 ? "?category=" + categorySrch : "")">Xóa tìm kiếm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="container-xl px-4">
+                            <hr class="mt-2" />
+                            <!-- Product Show-->
+                            <div class="row">
+                                @if (listProducts != null && listProducts.Count > 0) {
+                                    foreach (Product p in listProducts)
+                                    {
+                                        <div class="col-lg-3 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="@Url.Action("ProductDetails", "Product", new{productID = p.Id})">
+                                                    <img class="card-img-top" src="@p.Thumbnail" alt="@p.Name" title="@p.Name">
+                                                </a>
+                                                <div class="card-body text-center">
+                                                    <div class="card-title">
+                                                        <a href="@Url.Action("ProductDetails", "Product", new{productID = p.Id})" class="text-decoration-none fw-bold" style="color: #446084; font-size: .9em;">@p.Name</a>
+                                                    </div>
+                                                    <strong class="text-orange" style="font-size: .9em;">@Constants.ConvertCurrency(p.Price)</strong>
+                                                </div>
+                                                <div class="card-footer justify-content-between align-items-center text-center">
+                                                    <a class="btn btn-sm btn-outline-primary" href="@Url.Action("ProductDetails", "Product", new{productID = p.Id})"><i class="fas fa-shopping-cart me-2"></i>Thêm vào giỏ hàng</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="col-lg-3 col-md-6 mb-4 text-center">
+                                        <strong class="fw-bold text-primary">Không có sản phẩm phù hợp</strong>
+                                    </div>
+                                }
+                            </div>
+                            <div class="row">
+                                <ul class="pagination justify-content-center">
+                                    @if (currentPage <= gap + 1)
+                                    {
+                                        @for (int i = 1; i < currentPage; i++)
+                                        {
+                                            <li><a href="@Url.Action("HomePage", "Home", new {page = i})">@i</a></li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@Url.Action("HomePage", "Home", new {page = 1})"> <i class="fa fa-angle-double-left px-2"></i> </a></li>
+                                        @for (int i = currentPage - gap; i < currentPage; i++)
+                                        {
+                                            <li><a href="@Url.Action("HomePage", "Home", new {page = i})">@i</a></li>
+                                        }
+                                    }
+                                    <li class="active"><a href=""> @currentPage</a></li>
+                                    @if (currentPage >= totalPage - gap)
+                                    {
+                                        @for (int i = currentPage + 1; i <= totalPage; i++)
+                                        {
+                                            <li><a href="@Url.Action("HomePage", "Home", new {page = i})">@i</a></li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @for (int i = currentPage + 1; i <= currentPage + gap; i++)
+                                        {
+                                            <li><a href="@Url.Action("HomePage", "Home", new {page = i})">@i</a></li>
+                                        }
+                                        <li><a href="@Url.Action("HomePage", "Home", new {page = totalPage})"> <i class="fa fa-angle-double-right"></i> </a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>
+        const slider = document.querySelector(".slider");
+        const images = document.querySelectorAll(".slider img");
+        let counter = 1;
+        const slideWidth = images[0].clientWidth;
+
+        // Update initial position
+        slider.style.transform = `translateX(${-slideWidth * counter}px)`;
+
+        function nextSlide() {
+            if (counter >= images.length - 1) {
+                // Move to the cloned first image and reset counter
+                slider.style.transition = "none";
+                counter = 1;
+                slider.style.transform = `translateX(${-slideWidth * counter}px)`;
+            } else {
+                slider.style.transition = "transform 0.5s ease-in-out";
+                counter++;
+                slider.style.transform = `translateX(${-slideWidth * counter}px)`;
+            }
+        }
+
+        function prevSlide() {
+            if (counter <= 0) {
+                // Move to the cloned last image and reset counter
+                slider.style.transition = "none";
+                counter = images.length - 2;
+                slider.style.transform = `translateX(${-slideWidth * counter}px)`;
+            } else {
+                slider.style.transition = "transform 0.5s ease-in-out";
+                counter--;
+                slider.style.transform = `translateX(${-slideWidth * counter}px)`;
+            }
+        }
+
+        function SearchProduct() {
+            // Lấy giá trị của ô nhập liệu searchCondition
+            var searchCondition = document.getElementById("searchCondition").value;
+            var category = '@categorySrch';
+
+            var selectedBrands = [];
+            var checkboxes = document.querySelectorAll('input[name="brand"]:checked');
+            if (checkboxes.length > 0) {
+                checkboxes.forEach(function (checkbox) {
+                    selectedBrands.push(checkbox.value);
+                });
+            }
+
+            var selectedSizes = [];
+            var checkboxes = document.querySelectorAll('input[name="size"]:checked');
+            if (checkboxes.length > 0) {
+                checkboxes.forEach(function (checkbox) {
+                    selectedSizes.push(checkbox.value);
+                });
+            }
+
+            var srchStr = '?search=' + searchCondition;
+
+            if (selectedBrands.length > 0) {
+                selectedBrands.forEach(function (brand) {
+                    srchStr += '&brand=' + encodeURIComponent(brand);
+                });
+            }
+            
+            if (selectedSizes) {
+                selectedSizes.forEach(function (size) {
+                    srchStr += '&size=' + encodeURIComponent(size);
+                });
+            }
+
+            if (category >= 0) {
+                srchStr += '&category=' + category;
+            }
+
+            window.location.href = '/Home/HomePage' + srchStr;
+
+        }
+    </script>
+</body>
+</html>

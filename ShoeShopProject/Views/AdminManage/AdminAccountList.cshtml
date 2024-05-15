@@ -1,0 +1,139 @@
+﻿@using ShoeShopProject.Models;
+@{
+    List<Admin> listAdmin = ViewBag.ListAdmin;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Users List - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                    <div class="container-fluid px-4">
+                        <div class="page-header-content">
+                            <div class="row align-items-center justify-content-between pt-3">
+                                <div class="col-auto mb-3">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="user"></i></div>
+                                        Danh sách tài khoản quản trị
+                                    </h1>
+                                </div>
+                                <div class="col-12 col-xl-auto mb-3">
+                                    <a class="btn btn-sm btn-light text-primary" href="@Url.Action("AddAdminAccount", "AdminManage")">
+                                        <i class="me-1" data-feather="user-plus"></i>
+                                        Thêm tài khoản mới
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-fluid px-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Tên</th>
+                                        <th>Tài khoản</th>
+                                        <th>Mật khẩu</th>
+                                        <th>Role</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (listAdmin != null && listAdmin.Count > 0)
+                                    {
+                                        foreach(Admin admin in listAdmin)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar me-2"><img class="avatar-img img-fluid" src="@admin.Image" /></div>
+                                                        @admin.Fullname
+                                                    </div>
+                                                </td>
+                                                <td>@admin.Username</td>
+                                                <td>@admin.Password</td>
+                                                <td>
+                                                    @if (admin.RoleId == Constants.ROLE_SALE)
+                                                    {
+                                                        <span class="badge bg-green-soft text-green">Sale</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge bg-blue-soft text-blue">Admin</span>
+                                                    }
+                                                </td>
+                                                <td>@admin.Phone</td>
+                                                <td>
+                                                    <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="@Url.Action("UpdateAdminAccountProfile", "AdminManage", new {adminID = admin.Id})"><i data-feather="edit"></i></a>
+                                                    <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteAccount('@admin.Id')"><i data-feather="trash-2"></i></button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr class="text-center text-primary">CHƯA CÓ TÀI KHOẢN QUẢN TRỊ NÀO TRONG HỆ THỐNG</tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function DeleteAccount(adminID) {
+            var formData = new FormData();
+            formData.append('adminID', adminID);
+
+            $.ajax({
+                url: "/AdminManage/DeleteAdminAccount",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Xóa tài khoản quản trị thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể xóa tài khoản quản trị. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

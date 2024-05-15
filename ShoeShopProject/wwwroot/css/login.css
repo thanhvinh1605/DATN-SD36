@@ -1,0 +1,98 @@
+﻿body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-sprite {
+    background: url(https://cdn.myntassets.com/myx/images/header@2x-new16.a409d46af2e211afcaa82c1359787a90408024be.png) no-repeat 0 0;
+    background-size: 336px 48px
+}
+
+.login-gplus-logo {
+    background-position: -298px 0 !important;
+    width: 23px;
+    top: 13px
+}
+
+.login-gplus-logo {
+    height: 29px;
+    position: absolute;
+    left: 15px
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.login-logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.login-info-text {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.login-input-container {
+    margin-top: 20px;
+}
+
+.login-input-item {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+    .login-input-item:focus {
+        outline: none;
+        border-color: #4285f4;
+    }
+
+.login-button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 35%;
+    margin-top: 30px;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    color: #696b79;
+    height: 50px;
+    border: 1px solid #bfc0c6;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: left;
+}
+
+    .login-button:focus {
+        outline: 0
+    }
+
+    .login-button:hover {
+        box-shadow: 0 2px 5px #eaeaec
+    }

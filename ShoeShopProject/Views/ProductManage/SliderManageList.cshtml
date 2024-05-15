@@ -1,0 +1,348 @@
+﻿@using ShoeShopProject.Models;
+@using ShoeShopProject.ViewModels;
+@{
+    List<Slider> listSlider = ViewBag.ListSlider;
+    List<Contact> listContact = ViewBag.ListContact;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Users List - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                    <div class="container-fluid px-4">
+                        <div class="page-header-content">
+                            <div class="row align-items-center justify-content-between pt-3">
+                                <div class="col-auto mb-3">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="smartphone"></i></div>
+                                        Quản lý liên hệ
+                                    </h1>
+                                </div>
+                                <div class="col-12 col-xl-auto mb-3">
+                                    <button class="btn btn-outline-primary" data-bs-toggle="modal" onclick="ClearPayment()" data-bs-target="#addPaymentModal"><i class="me-1" data-feather="plus-square"></i>Thêm liên hệ mới</button>
+                                    <!-- Modal-->
+                                    <div class="modal fade" id="addPaymentModal" tabindex="-1" role="dialog" aria-labelledby="addPaymentModalTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="addPaymentModalTitle">Thêm liên hệ mới</h5>
+                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" onclick="ClearPayment()" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row p-3">
+
+                                                        <label class="small fw-bold" for="addPayMethod">Tên liên hệ</label>
+                                                        <input class="form-control mb-2" type="text" id="addPayMethod" value="" />
+
+                                                        <label class="small fw-bold" for="addPayDesc">Mô tả</label>
+                                                        <textarea class="form-control mb-2" id="addPayDesc"></textarea>
+
+                                                        <img class="mb-2" style="max-width: 250px; max-height: 450px; object-fit: contain;" id="addPayViewImg" src="" alt="" />
+                                                        <input type="file" class="form-control" style="display: none;" id="addPayImg" accept="image/*">
+                                                        <button class="btn btn-primary" onclick="UploadImage(1)" type="button">Tải lên ảnh mới</button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-primary" type="button" onclick="AddPayment()">Thêm mới</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-outline-primary" data-bs-toggle="modal" onclick="ClearSlider()" data-bs-target="#addSliderModal"><i class="me-1" data-feather="plus-square"></i>Thêm quảng cáo</button>
+                                    <!-- Modal-->
+                                    <div class="modal fade" id="addSliderModal" tabindex="-1" role="dialog" aria-labelledby="addSliderModalTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="addSliderModalTitle">Thêm mới quảng cáo</h5>
+                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" onclick="ClearSlider()" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row p-3">
+
+                                                        <img class="mb-2" style="max-width: 450px; max-height: 450px; object-fit: contain;" id="addSilderViewImg" src="" alt="" />
+                                                        <input type="file" class="form-control" style="display: none;" id="addSilderImg" accept="image/*">
+                                                        <button class="btn btn-primary" onclick="UploadImage(2)" type="button">Tải lên ảnh mới</button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-primary" type="button" onclick="AddSlider()">Thêm mới</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-fluid px-4">
+                    <div class="row mb-3">
+                        <div class="col-xl-6">
+                            <div class="card card-scrollable">
+                                <div class="card-header bg-transparent">
+                                    Quản lý liên hệ
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-billing-history">
+                                        <table id="" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3">Liên hệ</th>
+                                                    <th colspan="4">Mô tả</th>
+                                                    <th colspan="4">Hình ảnh</th>
+                                                    <th colspan="2">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (listContact != null && listContact.Count > 0)
+                                                {
+                                                    foreach (Contact contact in listContact)
+                                                    {
+                                                        <tr>
+                                                            <td colspan="3" class="align-middle">@contact.ContactName</td>
+                                                            <td colspan="4" class="align-middle"><a class="text-decoration-none" href="@contact.ContactDescription" target="_blank">@contact.ContactDescription</a></td>
+                                                            <td colspan="4">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img style="max-width: 350px; max-height: 350px; object-fit: contain;" src="@contact.ImageUrl" />
+                                                                </div>
+                                                            </td>
+                                                            <td colspan="2" class="align-middle">
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="UpdateContact()"><i data-feather="edit"></i></button>
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteContact('@contact.Id')"><i data-feather="trash-2"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card card-scrollable">
+                                <div class="card-header bg-transparent">
+                                    Quản lý quảng cáo
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-billing-history">
+                                        <table id="" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1">Hiển thị</th>
+                                                    <th colspan="7">Ảnh quảng cáo</th>
+                                                    <th colspan="2">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (listSlider != null && listSlider.Count > 0)
+                                                {
+                                                    foreach (Slider slider in listSlider)
+                                                    {
+                                                        <tr>
+                                                            <td colspan="1" class="align-middle text-end">
+                                                                <input class="form-check btn-datatable me-2" type="checkbox" checked="@slider.Status" onclick="UpdateSlider('@slider.Id')" />
+                                                            </td>
+                                                            <td colspan="7">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img style="max-width:350px; max-height: 350px; object-fit: contain;" src="@slider.Image" />
+                                                                </div>
+                                                            </td>
+                                                            <td colspan="2" class="align-middle text-end">
+                                                                <button class="btn btn-icon btn-transparent-dark" onclick="DeleteSlider('@slider.Id')"><i data-feather="trash-2"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        const addPayImg = document.getElementById('addPayImg');
+        const addPayViewImg = document.getElementById('addPayViewImg');
+
+        addPayImg.addEventListener('change', async function () {
+            const file = addPayImg.files[0];
+            if (file) {
+                if (!await validateFile(file)) {
+                    addPayViewImg.src = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    addPayViewImg.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+            }
+        });
+
+        const addSilderImg = document.getElementById('addSilderImg');
+        const addSilderViewImg = document.getElementById('addSilderViewImg');
+
+        addSilderImg.addEventListener('change', async function () {
+            const file = addSilderImg.files[0];
+            if (file) {
+                if (!await validateFile(file)) {
+                    addSilderViewImg.src = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    addSilderViewImg.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+            }
+        });
+
+        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'];
+
+        async function validateFile(file) {
+            if (validImageTypes.indexOf(file.type) === -1) {
+                await showAlert("Please just choose (jpeg, png, gif, svg hoặc webp).", "warning");
+                return false;
+            }
+            return true;
+        }
+
+        function UploadImage(type) {
+            if (type == '1') {
+                document.getElementById('addPayImg').click();
+            } else if (type == '2') {
+                document.getElementById('addSilderImg').click();
+            }
+        }
+
+        function ClearSlider() {
+            document.getElementById('addSilderImg').value = "";
+            document.getElementById('addSilderViewImg').src = "";
+        }
+
+        function ClearPayment() {
+            document.getElementById('addPayImg').value = "";
+            document.getElementById('addPayViewImg').src = "";
+        }
+
+        function AddSlider() {
+            const img = $('#addSilderImg')[0].files[0];
+            if (!img) {
+                showAlert('Tải lên ảnh quảng cáo', 'warning');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('img', img);
+
+            $.ajax({
+                url: "/ProductManage/AddSlider",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Thêm mới thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        await showAlert("Không thể thêm mới. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+
+        function DeleteSlider(id) {
+            var formData = new FormData();
+            formData.append('sliderID', id);
+
+            $.ajax({
+                url: "/ProductManage/DeleteSlider",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Xóa quảng cáo thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        await showAlert("Không thể xóa. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+
+
+        function UpdateSlider(id) {
+            var formData = new FormData();
+            formData.append('sliderID', id);
+
+            $.ajax({
+                url: "/ProductManage/UpdateSlider",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        window.location.reload();
+                    } else {
+                        await showAlert("Không cập nhật. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

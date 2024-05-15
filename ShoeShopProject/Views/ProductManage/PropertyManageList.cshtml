@@ -1,0 +1,382 @@
+﻿@using ShoeShopProject.Models;
+@using ShoeShopProject.ViewModels;
+@{
+    List<Category> listCategories = ViewBag.ListCategories;
+    List<Brand> listBrand = ViewBag.ListBrand;
+    List<Color> listColor = ViewBag.ListColor;
+    List<Size> listSize = ViewBag.ListSize;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Users List - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                    <div class="container-fluid px-4">
+                        <div class="page-header-content">
+                            <div class="row align-items-center justify-content-between pt-3">
+                                <div class="col-auto mb-3">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="database"></i></div>
+                                        Quản lý thành phần
+                                    </h1>
+                                </div>
+                                <div class="col-12 col-xl-auto mb-3">
+                                    <a class="btn btn-sm btn-light text-primary" href="@Url.Action("ProductManageList", "ProductManage")">
+                                        <i class="me-1" data-feather="arrow-left"></i>
+                                        Danh sách sản phẩm
+                                    </a>
+
+                                    <!-- Button trigger modal-->
+                                    <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" onclick="ClearProperty()" data-bs-target="#exampleModalCenter"><i class="me-1" data-feather="plus"></i>Thêm mới thành phần</button>
+                                    <!-- Modal-->
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalCenterTitle">Thêm mới thành phần</h5>
+                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" onclick="ClearProperty()" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row p-3">
+                                                        <label class="small fw-bold" for="propertyType">Chọn loại thành phần</label>
+                                                        <select class="form-control mb-3" id="propertyType">
+                                                            <option selected disabled>Chọn thành phần</option>
+                                                            <option value="@Constants.PRO_CATEGORY">Phân loại</option>
+                                                            <option value="@Constants.PRO_BRAND">Thương hiệu</option>
+                                                            <option value="@Constants.PRO_COLOR">Màu sắc</option>
+                                                            <option value="@Constants.PRO_SIZE">Kích cỡ</option>
+                                                        </select>
+                                                        <label class="small fw-bold" for="propertyValue">Giá trị</label>
+                                                        <input class="form-control mb-2" type="text" id="propertyValue" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-primary" type="button" onclick="AddProperty()">Thêm mới</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-fluid px-4">
+                    <div class="row mb-4">
+                        <!-- Phân loại -->
+                        <div class="col-sm-3">
+                            <div class="card card-scrollable">
+                                <div class="card-header bg-transparent">
+                                        Quản lý phân loại
+                                    </div>
+                                <div class="card-body">
+                                    
+                                    <div class="table-responsive table-billing-history">
+                                        <table id="" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-start" colspan="4">Phân loại</th>
+                                                    <th class="text-end" colspan="2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (listCategories != null && listCategories.Count > 0)
+                                                {
+                                                    foreach (Category category in listCategories)
+                                                    {
+                                                        <tr>
+                                                            <td class="text-start" colspan="3">
+                                                                <input type="text" class="form-control" name="category_@category.Id" style="padding: 0.5rem; 0.5rem;" value="@category.Name" />
+                                                            </td>
+                                                            <td class="text-end" colspan="2">
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="UpdateProperty('@Constants.PRO_CATEGORY', '@category.Id')"><i data-feather="edit"></i></button>
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteProperty('@Constants.PRO_CATEGORY', '@category.Id')"><i data-feather="trash-2"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Thương hiệu -->
+                        <div class="col-sm-3">
+                            <div class="card card-scrollable">
+                                <div class="card-header bg-transparent">Quản lý thương hiệu</div>
+                                <div class="card-body">
+                                    
+                                    <div class="table-responsive table-billing-history">
+                                        <table id="" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-start" colspan="4">Thương hiệu</th>
+                                                    <th class="text-end" colspan="2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (listBrand != null && listBrand.Count > 0)
+                                                {
+                                                    foreach (Brand brand in listBrand)
+                                                    {
+                                                        <tr>
+                                                            <td class="text-start" colspan="3">
+                                                                <input type="text" class="form-control" name="brand_@brand.Id" style="padding: 0.5rem; 0.5rem;" value="@brand.Name" />
+                                                            </td>
+                                                            <td class="text-end" colspan="2">
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="UpdateProperty('@Constants.PRO_BRAND', '@brand.Id')"><i data-feather="edit"></i></button>
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteProperty('@Constants.PRO_BRAND', '@brand.Id')"><i data-feather="trash-2"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Màu sắc -->
+                        <div class="col-sm-3">
+                            <div class="card card-scrollable">
+                                <div class="card-header bg-transparent">Quản lý Màu sắc</div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-billing-history">
+                                        <table id="" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-start" colspan="4">Màu sắc</th>
+                                                    <th class="text-end" colspan="2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (listColor != null && listColor.Count > 0)
+                                                {
+                                                    foreach (Color color in listColor)
+                                                    {
+                                                        <tr>
+                                                            <td class="text-start" colspan="3">
+                                                                <input type="text" class="form-control" name="color_@color.Id" style="padding: 0.5rem; 0.5rem;" value="@color.Cname" />
+                                                            </td>
+                                                            <td class="text-end" colspan="2">
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="UpdateProperty('@Constants.PRO_COLOR', '@color.Id')"><i data-feather="edit"></i></button>
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteProperty('@Constants.PRO_COLOR', '@color.Id')"><i data-feather="trash-2"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Size -->
+                        <div class="col-sm-3">
+                            <div class="card card-scrollable">
+                                <div class="card-header bg-transparent">Quản lý kích thước</div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-billing-history">
+                                        <table id="" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-start" colspan="4">Kích thước</th>
+                                                    <th class="text-end" colspan="2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (listSize != null && listSize.Count > 0)
+                                                {
+                                                    foreach (Size size in listSize)
+                                                    {
+                                                        <tr>
+                                                            <td class="text-start" colspan="3">
+                                                                <input type="number" class="form-control" name="size_@size.Id" style="padding: 0.5rem; 0.5rem;" value="@size.SizeVal" />
+                                                            </td>
+                                                            <td class="text-end" colspan="2">
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="UpdateProperty('@Constants.PRO_SIZE', '@size.Id')"><i data-feather="edit"></i></button>
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeleteProperty('@Constants.PRO_SIZE', '@size.Id')"><i data-feather="trash-2"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        function DeleteProperty(property, deleteID) {
+            var formData = new FormData();
+            formData.append('deleteID', deleteID);
+            formData.append('property', property);
+
+            $.ajax({
+                url: "/ProductManage/DeleteProperty",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Xóa thành phần thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể xóa thành phần. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+
+        function UpdateProperty(property, updateID) {
+            const positiveRegex = /^[1-9]\d*$/;
+            var propertyName = '';
+
+            if (property == '@Constants.PRO_CATEGORY') {
+                propertyName = document.querySelector('[name="category_' + updateID + '"]').value;
+            }
+            else if (property == '@Constants.PRO_BRAND') {
+                propertyName = document.querySelector('[name="brand_' + updateID + '"]').value;
+            }
+            else if (property == '@Constants.PRO_COLOR') {
+                propertyName = document.querySelector('[name="color_' + updateID + '"]').value;
+            }
+            else if (property == '@Constants.PRO_SIZE') {
+                propertyName = document.querySelector('[name="size_' + updateID + '"]').value;
+
+                if (property == '@Constants.PRO_SIZE' && !positiveRegex.test(propertyName)) {
+                    showAlert('Kích thước phải lớn hơn 0', 'warning');
+                    return;
+                }
+            }
+
+            if (!propertyName || propertyName.trim == '') {
+                showAlert('Nhập tên thành phần muốn cập nhật', 'warning');
+                return;
+            }
+            
+            var formData = new FormData();
+            formData.append('propertyName', propertyName);
+            formData.append('updateID', updateID);
+            formData.append('property', property);
+
+            $.ajax({
+                url: "/ProductManage/UpdateProperty",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        if (data.updated) {
+                            await showAlert('Cập nhật thành phần thành công', 'success');
+                        } else {
+                            await showAlert('Thành phần đã tồn tại', 'warning');
+                        }
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể cập nhật thành phần. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+
+        function ClearProperty() {
+            document.getElementById("propertyType").selectedIndex = 0;
+            document.getElementById("propertyValue").value = "";
+        }
+
+        function AddProperty() {
+            const pType = document.getElementById("propertyType").value;
+            const pVal = document.getElementById("propertyValue").value;
+            const positiveRegex = /^[1-9]\d*$/;
+
+            if (!pType || pType == '') {
+                showAlert('Vui lòng chọn thành phần thêm mới', 'warning');
+                return;
+            }
+
+            if (!pVal || pVal == '') {
+                showAlert('Vui lòng điền giá trị thành phần thêm mới', 'warning');
+                return;
+            }
+
+            if (pType == '@Constants.PRO_SIZE' && !positiveRegex.test(pVal)) {
+                showAlert('Vui lòng điền giá trị kích thước thêm mới lớn hơn 0', 'warning');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('pType', pType);
+            formData.append('pVal', pVal);
+
+            $.ajax({
+                url: "/ProductManage/AddProperty",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Thêm mới thành phần thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể thêm mới thành phần. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

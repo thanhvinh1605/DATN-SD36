@@ -1,0 +1,145 @@
+﻿@using ShoeShopProject.Data
+@using ShoeShopProject.Models
+@using ShoeShopProject.ViewModels
+@{
+    HttpContextAccessor ht = new HttpContextAccessor();
+    EmrSession emrSession = new EmrSession(ht.HttpContext);
+    User user = ViewBag.UserHeader;
+    List<CartDetails> headerCartDetails = ViewBag.HeaderCartDetails;
+    List<Category> listCategories = ViewBag.HeaderListCategories;
+    bool checkLogin = ViewBag.CheckLogin;
+    var categoryHeaderSrch = ViewBag.CategorySearch;
+    if (categoryHeaderSrch == null) categoryHeaderSrch = -1;
+}
+<!--Header-->
+<nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="@Url.Action("HomePage", "Home")">NEXUS SNEAKER</a>
+    <!-- Navbar Category-->
+    <ul class="navbar-nav align-items-center ms-auto">
+        <!-- Categories -->
+        @if (listCategories != null && listCategories.Count > 0)
+        {
+            foreach (Category category in listCategories)
+            {
+                <li class="nav-item dropdown no-caret d-none d-md-block me-3">
+                    <a class="nav-link @((categoryHeaderSrch == category.Id) ? "text-primary" : "")" id="category_@category.Id" href="@Url.Action("HomePage", "Home", new { category = category.Id })">
+                        <div class="menu-bar text-uppercase">@category.Name</div>
+                    </a>
+                </li>
+            }
+        }
+    </ul>
+    <!-- Navbar User-->
+    <ul class="navbar-nav align-items-center ms-auto">
+@if (checkLogin && user != null) {
+            <!-- Carts Dropdown-->
+            <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
+                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="shopping-cart"></i>
+                    @if (headerCartDetails != null && headerCartDetails.Any())
+                    {
+                        <strong class="badge-sm text-red fw-bold">@headerCartDetails.Count</strong>
+                    } else
+                    {
+                        <strong class="badge-sm text-red fw-bold">0</strong>
+                    }
+                </a>
+                <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownAlerts">
+                    <h6 class="dropdown-header dropdown-notifications-header">
+                    <i class="me-2" data-feather="shopping-cart"></i>
+                        Giỏ hàng
+                    </h6>
+                    @if (headerCartDetails != null && headerCartDetails.Count > 0)
+                    {
+                        foreach (CartDetails details in headerCartDetails)
+                        {
+                        <div class="dropdown-item dropdown-notifications-item">
+                            <a class="dropdown-notifications-item-content" href="@Url.Action("ProductDetails", "Product", new {productID = details.productId})">
+                                <img class="" style="height: 2.5rem;width: 2.5rem;margin-right: 1rem;border-radius: 100%;" src="@details.thumbnail"></img>
+                            </a>
+                            <div class="dropdown-notifications-item-content">
+                                <a class="dropdown-notifications-item-content-text text-decoration-none fw-bold"  href="@Url.Action("ProductDetails", "Product", new {productID = details.productId})">@details.productName</a>
+                                <div class="dropdown-notifications-item-content-details">@Constants.ConvertCurrency(details.unitPrice) X @details.quantity</div>
+                            </div>
+                             <div class="dropdown-notifications-item-icon text-end bg-transparent">
+                                <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="HeaderDeleteCartItem('@details.cartItemId')" data-feather="x"></button>
+                            </div>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="dropdown-item dropdown-notifications-item">
+                            <div class="dropdown-notifications-item-content">
+                                <div class="dropdown-notifications-item-content-text">Bạn chưa có đơn hàng nào</div>
+                            </div>
+                        </div>
+                    }
+                    <a class="dropdown-item dropdown-notifications-footer" href="@Url.Action("Cart", "Shoping")">Xem tất cả đơn hàng</a>
+                </div>
+            </li>
+            <!-- User Dropdown-->
+            <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="@user.Image" /></a>
+                <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                    <h6 class="dropdown-header d-flex align-items-center">
+                    <img class="dropdown-user-img" src="@user.Image" />
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-details-name">@user.Fullname</div>
+                            <div class="dropdown-user-details-email">@user.Email</div>
+                        </div>
+                    </h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="@Url.Action("account-profile", "Account", new {userID = user.Id})">
+                        <div class="dropdown-item-icon"><i data-feather="user"></i></div>
+                        Tài khoản
+                    </a>
+                    <a class="dropdown-item" href="@Url.Action("logout", "Account")">
+                        <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                        Đăng xuất
+                    </a>
+                </div>
+            </li>
+} else {
+            <li class="nav-item dropdown me-3 me-lg-4">
+                <a class="login-container" href="@Url.Action("login", "Account")">Đăng nhập</a>
+            </li>
+}
+    </ul>
+</nav>
+<script src="/js/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    async function HeaderDeleteCartItem(cartItemId) {
+        var formData = new FormData();
+        formData.append("cartItemId", cartItemId);
+
+        try {
+            const response = await fetch("/Shoping/DeleteCartItem", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1000);
+            } else {
+                showAlert('Không thể xóa khỏi giỏ hàng', 'warning');
+                window.location.reload();
+            }
+        } catch (error) {
+            showAlert('Error' + error, 'error');
+        }
+    }
+
+    function toggleTextPrimary(element) {
+        if ($(element).find('.menu-bar').hasClass('text-primary')) {
+            $(element).find('.menu-bar').removeClass('text-primary');
+        } else {
+            $(element).find('.menu-bar').addClass('text-primary');
+        }
+    }
+</script>

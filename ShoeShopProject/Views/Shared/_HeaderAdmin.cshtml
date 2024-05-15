@@ -1,0 +1,53 @@
+﻿@using ShoeShopProject.Data
+@using ShoeShopProject.Models
+@using ShoeShopProject.ViewModels
+@{
+    HttpContextAccessor ht = new HttpContextAccessor();
+    AdminSession adminSession = ViewBag.AdminSession; 
+    if (adminSession == null) adminSession = new AdminSession(ht.HttpContext);
+    Admin admin = ViewBag.AdminHeader;
+    Role role = ViewBag.RoleHeader;
+    bool checkLogin = (ViewBag.CheckLogin != null && ViewBag.CheckLogin == true);
+}
+<!--Header-->
+<nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="@Url.Action("Dashboard", "AdminManage", new {startDate = DateTime.Now.AddMonths(-1), endDate = DateTime.Now})">NEXUS SNEAKER</a>
+    <!-- Navbar User-->
+    <ul class="navbar-nav align-items-center ms-auto">
+@if (checkLogin && admin != null) {
+            <!-- Carts Dropdown-->
+            <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
+                <a class="btn btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="me-2" data-feather="user-check"></i>@role.RoleName</a>
+            </li>
+            <!-- User Dropdown-->
+            <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="@admin.Image" /></a>
+                <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                    <h6 class="dropdown-header d-flex align-items-center">
+                    <img class="dropdown-user-img" src="@admin.Image" />
+                        <div class="dropdown-user-details">
+                            <div class="dropdown-user-details-name">@admin.Fullname</div>
+                            <div class="dropdown-user-details-email">@admin.Username</div>
+                        </div>
+                    </h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="@Url.Action("AccountAdminProfile", "AdminManage", new {adminID = admin.Id})">
+                        <div class="dropdown-item-icon"><i data-feather="user"></i></div>
+                        Tài khoản
+                    </a>
+                    <a class="dropdown-item" href="@Url.Action("logout", "Account")">
+                        <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                        Đăng xuất
+                    </a>
+                </div>
+            </li>
+} else {
+            <li class="nav-item dropdown me-3 me-lg-4">
+                <a class="login-container" href="@Url.Action("login", "Account")">Đăng nhập</a>
+            </li>
+}
+    </ul>
+</nav>
+<script src="/js/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

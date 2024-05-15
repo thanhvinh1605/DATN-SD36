@@ -1,0 +1,75 @@
+﻿@{
+    var campusList = ViewBag.CampusList;
+    var message = ViewBag.Message;
+    int campusSelected = 0;
+    string returnUrl = "";
+    if (!string.IsNullOrEmpty(ViewBag.ReturnUrl))
+    {
+        returnUrl = ViewBag.ReturnUrl;
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login - FPTEIC</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/login.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container-xl px-4">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11">
+                            <!-- Social login form-->
+                            <div class="card my-5">
+                                <div class="card-body p-5 text-center">
+                                    <img class="login-logo" src="/assets/img/illustrations/Logo.png" alt="logo">
+                                    <div class="h2 fw-light mb-3">Đăng nhập</div>
+                                </div>
+                                <hr class="my-0" />
+                                <div class="card-body p-5">
+                                    <!-- Login form-->
+                                    <p class="login-info-text text-center">Đăng nhập bằng google</p>
+                                    <button class="login-button" id="gPlusLogin" onclick="submitForm()">
+                                        <span class="header-sprite login-gplus-logo"></span>LOGIN WITH GOOGLE
+                                    </button>
+                                    <div class="text-center small text-red" id="message" style="padding-top: 5px;">
+                                        @message
+                                    </div>
+                                </div>
+                                <hr class="my-0" />
+                                <div class="card-body px-5 py-4 justify-content-center text-center">
+                                    <div class="fw-light mb-3">Đăng nhập quản lý</div>
+                                    <!-- Social links-->
+                                    <a class="btn btn-outline-orange mx-1" href="@Url.Action("login-admin", "Account")">Đăng nhập quản lý</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="layoutAuthentication_footer">
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>
+        function submitForm() {
+            window.location.href = "@Url.Action("google-login", "Account")?ReturnUrl=" + "@returnUrl";
+        }
+    </script>
+</body>
+</html>

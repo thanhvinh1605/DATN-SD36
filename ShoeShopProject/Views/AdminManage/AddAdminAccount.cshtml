@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Add User - SB Admin Pro</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                    <div class="container-xl px-4">
+                        <div class="page-header-content">
+                            <div class="row align-items-center justify-content-between pt-3">
+                                <div class="col-auto mb-3">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="user-plus"></i></div>
+                                        Add User
+                                    </h1>
+                                </div>
+                                <div class="col-12 col-xl-auto mb-3">
+                                    <a class="btn btn-sm btn-light text-primary" href="@Url.Action("AdminAccountList", "AdminManage")">
+                                        <i class="me-1" data-feather="arrow-left"></i>
+                                        Back to Users List
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-xl px-4 mt-4">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <!-- Profile picture card-->
+                            <div class="card mb-4 mb-xl-0">
+                                <div class="card-header">Ảnh đại diện</div>
+                                <div class="card-body text-center">
+                                    <!-- Profile picture image-->
+                                    <img class="img-account-profile avar-image-disp rounded-circle mb-2" id="imagePreviewAdd" src="" alt="" />
+                                    <!-- Profile picture help block-->
+                                    <div class="small font-italic text-muted mb-4">Ảnh JPG hoặc PNG</div>
+                                    <input type="file" class="form-control" style="display: none;" id="fileInputImageAdd" accept="image/*">
+                                    <!-- Profile picture upload button-->
+                                    <button class="btn btn-primary" onclick="UploadAvatar()" type="button">Tải lên ảnh mới</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <!-- Account details card-->
+                            <div class="card mb-4">
+                                <div class="card-header">Thông tin tài khoản</div>
+                                <div class="card-body">
+                                    <form>
+                                        <!-- Form Row-->
+                                        <div class="row gx-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="fullName">Họ và tên</label>
+                                                <input class="form-control" id="fullName" type="text" placeholder="Vui lòng nhập họ và tên" value="" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="phone">Số điện thoại</label>
+                                                <input class="form-control" id="phone" type="text" placeholder="Vui lòng nhập số điện thoại" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="row gx-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="userName">Tài khoản</label>
+                                                <input class="form-control" id="userName" type="text" placeholder="Vui lòng nhập tên tài khoản" value="" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="userPassword">Mật khẩu</label>
+                                                <input class="form-control" id="userPassword" type="text" placeholder="Vui lòng nhập mật khẩu" value="" />
+                                            </div>
+                                        </div>
+                                        <!-- Form Group (Roles)-->
+                                        <div class="row gx-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="role">Vai trò</label>
+                                                <select class="form-select" id="role" aria-label="Default select example">
+                                                    <option selected disabled>Chọn vai trò:</option>
+                                                    <option value="1">Admin</option>
+                                                    <option value="2">Sale</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Submit button-->
+                                        <button class="btn btn-primary" type="button" onclick="AddManageAccount()">Thêm người dùng</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const fileInputImgAdd = document.getElementById('fileInputImageAdd');
+        const imagePreviewAdd = document.getElementById('imagePreviewAdd');
+
+        fileInputImgAdd.addEventListener('change', async function () {
+            const file = fileInputImgAdd.files[0];
+            if (file) {
+                if (!await validateFile(file)) {
+                    imagePreviewAdd.src = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreviewAdd.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+            }
+        });
+
+        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'];
+
+        async function validateFile(file) {
+            if (validImageTypes.indexOf(file.type) === -1) {
+                await showAlert("Please just choose (jpeg, png, gif, svg hoặc webp).", "warning");
+                return false;
+            }
+            return true;
+        }
+
+        function UploadAvatar() {
+            const fileInputImageAdd = document.getElementById('fileInputImageAdd');
+            fileInputImageAdd.click();
+        }
+
+        function AddManageAccount() {
+
+            const fullName = document.querySelector('input[id="fullName"]').value;
+            const userPhone = document.querySelector('input[id="phone"]').value;
+            const userName = document.querySelector('input[id="userName"]').value;
+            const password = document.querySelector('input[id="userPassword"]').value;
+            const roleSelect = document.querySelector('#role');
+            const selectedRole = roleSelect.value;
+            const fileInputImageAdd = $('#fileInputImageAdd')[0].files[0];
+
+            if (fullName && userName.trim() === '') {
+                showAlert('Vui lòng nhập tên tài khoản', 'warning');
+                return;
+            }
+
+            if (password && password.trim() === '') {
+                showAlert('Vui lòng mật khẩu', 'warning');
+                return;
+            }
+
+            if (userPhone && userPhone.trim() === '') {
+                showAlert('Vui lòng nhập số điện thoại', 'warning');
+                return;
+            }
+
+            if (fullName && fullName.trim() === '') {
+                showAlert('Vui lòng họ và tên', 'warning');
+                return;
+            }
+
+            if (selectedRole && selectedRole.trim == '') {
+                showAlert('Vui chọn vai trò', 'warning');
+                return;
+            }
+
+            if (!fileInputImageAdd || fileInputImageAdd.length <= 0) {
+                showAlert('Vui chọn tải lên ảnh', 'warning');
+                return;
+            }
+
+            var formData = new FormData();
+
+            formData.append('fullName', fullName);
+            formData.append('userName', userName);
+            formData.append('phone', userPhone);
+            formData.append('password', password);
+            formData.append('role', selectedRole);
+            if (fileInputImageAdd) {
+                formData.append('userImg', fileInputImageAdd);
+            }
+
+            $.ajax({
+                url: "/AdminManage/AddNewAdminAccount",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Cập nhật tài khoản quản trị thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể cập nhật tài khoản quản trị. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

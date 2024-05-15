@@ -1,0 +1,228 @@
+﻿@using ShoeShopProject.Models;
+@using ShoeShopProject.ViewModels;
+@{
+    List<Payment> listPayment = ViewBag.ListPayemnt;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Users List - SB Admin Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="nav-fixed">
+    @Html.Partial("_HeaderAdmin")
+    <div id="layoutSidenav">
+        @Html.Partial("_MenuAdmin")
+        <div id="layoutSidenav_content">
+            <main>
+                <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                    <div class="container-fluid px-4">
+                        <div class="page-header-content">
+                            <div class="row align-items-center justify-content-between pt-3">
+                                <div class="col-auto mb-3">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="shopping-bag"></i></div>
+                                        Quản lý thanh toán
+                                    </h1>
+                                </div>
+                                <div class="col-12 col-xl-auto mb-3">
+                                    <button class="btn btn-outline-primary" data-bs-toggle="modal" onclick="ClearPayment()" data-bs-target="#addPaymentModal"><i class="me-1" data-feather="plus-square"></i>Thêm phương thức thanh toán</button>
+                                    <!-- Modal-->
+                                    <div class="modal fade" id="addPaymentModal" tabindex="-1" role="dialog" aria-labelledby="addPaymentModalTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="addPaymentModalTitle">Thêm phương thức thanh toán</h5>
+                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" onclick="ClearPayment()" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row p-3">
+
+                                                        <label class="small fw-bold" for="addPaymentName">Loại thanh toán</label>
+                                                        <input class="form-control mb-2" type="text" id="addPaymentName" value="" />
+
+                                                        <label class="small fw-bold" for="addPaymentDesc">Mô tả</label>
+                                                        <textarea class="form-control mb-2" id="addPaymentDesc"></textarea>
+
+                                                        <img class="mb-2" style="max-width: 250px; max-height: 250px; object-fit: contain;" id="addPayViewImg" src="" alt="" />
+                                                        <input type="file" class="form-control" style="display: none;" id="addPayImg" accept="image/*">
+                                                        <button class="btn btn-primary" onclick="UploadImage()" type="button">Tải lên ảnh mới</button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-primary" type="button" onclick="AddPayment()">Thêm mới</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- Main page content-->
+                <div class="container-fluid px-4 mb-4">
+                    <div class="row">
+                        <div class="card card-scrollable">
+                            <div class="card-header bg-transparent">
+                                Quản lý thanh toán
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="" class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th colspan="4">Kiểu thanh toán</th>
+                                                <th colspan="4">Mô tả thanh toán</th>
+                                                <th colspan="4">Hình ảnh</th>
+                                                <th colspan="2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (listPayment != null && listPayment.Count > 0)
+                                            {
+                                                foreach (Payment payment in listPayment)
+                                                {
+                                                    <tr>
+                                                        <td colspan="4" class="align-middle">@payment.PaymentMethod</td>
+                                                        <td colspan="4" class="align-middle">@payment.Description</td>
+                                                        <td colspan="4">
+                                                            <div class="d-flex align-items-center">
+                                                                <img style="max-width: 250px; max-height: 250px; object-fit: contain;" src="@payment.Image" />
+                                                            </div>
+                                                        </td>
+                                                        <td colspan="2" class="align-middle">
+                                                            <button class="btn btn-datatable btn-icon btn-transparent-dark" onclick="DeletePayment('@payment.Id')"><i data-feather="trash-2"></i></button>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/js/datatables/datatables-simple-demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        const addPayImg = document.getElementById('addPayImg');
+        const addPayViewImg = document.getElementById('addPayViewImg');
+
+        addPayImg.addEventListener('change', async function () {
+            const file = addPayImg.files[0];
+            if (file) {
+                if (!await validateFile(file)) {
+                    addPayViewImg.src = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    addPayViewImg.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+            }
+        });
+
+        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'];
+
+        async function validateFile(file) {
+            if (validImageTypes.indexOf(file.type) === -1) {
+                await showAlert("Please just choose (jpeg, png, gif, svg hoặc webp).", "warning");
+                return false;
+            }
+            return true;
+        }
+
+        function UploadImage() {
+            document.getElementById('addPayImg').click();
+
+        }
+
+        function AddPayment() {
+            const paymentMethod = document.getElementById('addPaymentName').value;
+            const paymentDesc = document.getElementById('addPaymentDesc').value;
+            const fileInputImageAdd = $('#addPayImg')[0].files[0];
+
+
+            var formData = new FormData();
+            formData.append('paymentMethod', paymentMethod);
+            formData.append('paymentDesc', paymentDesc);
+
+            if (fileInputImageAdd) {
+                formData.append('paymentImg', fileInputImageAdd);
+            }
+
+            $.ajax({
+                url: "/AdminManage/AddPaymentMethod",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Thêm phương thức thanh toán thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể cập nhật. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+
+        function DeletePayment(id) {
+
+            var formData = new FormData();
+            formData.append('paymentId', id);
+
+            $.ajax({
+                url: "/AdminManage/DeletePaymentMethod",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Xóa phương thức thanh toán thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        await showAlert("Không thể xóa. vui lòng thử lại.", 'warning');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Error", 'error');
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

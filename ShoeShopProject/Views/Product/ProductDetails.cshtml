@@ -1,0 +1,332 @@
+﻿@using ShoeShopProject.Models;
+@using ShoeShopProject.Data;
+@using ShoeShopProject.ViewModels;
+@using System.Collections;
+@{
+    EmrSession emrSession = ViewBag.EmrSession;
+    Product product = ViewBag.Product;
+    List<ProductDetails> listProductDetails = ViewBag.ListProductDetails;
+    List<Product> listProductSame = ViewBag.ListProductSame;
+    // Lọc ra các màu duy nhất
+    var uniqueColors = listProductDetails.Select(p => new { p.colorID, p.colorName }).Distinct().ToList();
+    // Lọc ra các size duy nhất
+    var uniqueSizes = listProductDetails.Select(p => new { p.sizeId, p.size }).Distinct().ToList();
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pricing - SB Admin Pro</title>
+        <link href="/css/styles.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+        <style>
+            .thumbnail-carousel {
+                display: flex;
+                align-items: center;
+            }
+
+            .thumbnails {
+                display: flex;
+                overflow: hidden;
+            }
+
+            .thumbnails img {
+                width: 80px;
+                height: 80px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+            .carousel-controls button {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .product-image img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .btn:disabled {
+                color: #495057; /* Màu chữ xám đậm hơn */
+                background-color: #ced4da; /* Màu nền xám đậm hơn */
+                border-color: #adb5bd; /* Màu viền xám đậm hơn */
+            }
+
+        </style>
+    </head>
+    <body class="nav-fixed sidenav-toggled">
+        @Html.Partial("_Header")
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- Main page content-->
+                    <div class="container-xl px-4">
+                        <!-- Detailed pricing example-->
+                        <div class="card pricing-detailed my-5">
+                            <div class="row align-items-center g-0">
+                                <!-- Detailed pricing column 1-->
+                                <div class="col-lg-6 z-1 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+                                    <div class="product-details">
+                                        <div class="view-product">
+                                            <img id="product-image" src="@product.Thumbnail" alt="Product Image">
+                                        </div>
+                                        <div class="thumbnail-carousel">
+                                            <div class="carousel-controls">
+                                                <button id="prev-button"><i class="fa fa-angle-left"></i></button>
+                                            </div>
+                                            <div class="thumbnails">
+                                                <img src="@product.Thumbnail" alt="">
+                                            </div>
+                                            <div class="carousel-controls">
+                                                <button id="next-button"><i class="fa fa-angle-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Detailed-->
+                                <div class="col-lg-6">
+                                    <div class="">
+                                        <div class="p-5">
+                                            <div class="mb-2">
+                                                <span class="fw-bold text-dark" style="font-size: 1.5rem">@product.Name</span>
+                                            </div>
+                                            <div class="mb-2">
+                                                <span class="fw-bold text-danger" style="font-size: 1.2rem">@Constants.ConvertCurrency(product.Price)</span>
+                                            </div>
+                                            <hr class="my-1" />
+                                            <div class="mb-3">
+                                                <span class="fw-bold text-dark" style="font-size: 1rem">Mã sản phẩm: @product.Id</span>
+                                            </div>
+                                            @if (uniqueSizes != null && uniqueSizes.Count > 0)
+                                            {
+                                                <div class="mb-3 mt-3">
+                                                    <span class="fw-bold text-dark me-4">Size</span>
+                                                    @foreach (var s in uniqueSizes)
+                                                    {
+                                                        <button class="btn btn-outline-green size-button" id="size_@s.sizeId" onclick="SelectSize('@s.sizeId')">@s.size</button>
+                                                    }
+                                                </div>
+                                            }
+                                            @if (uniqueColors != null && uniqueColors.Count > 0)
+                                            {
+                                                <div class="mb-3 mt-3">
+                                                    <span class="fw-bold text-dark me-4">Màu</span>
+                                                @foreach (var c in uniqueColors)
+                                                    {
+                                                    <button class="btn btn-outline-green color-button" id="color_@c.colorID" onclick="SelectColor('@c.colorID')">@c.colorName</button>
+                                                    }
+                                                </div>
+                                            }
+                                            <div class="mb-3 mt-3 d-flex justify-content-start align-items-center">
+                                                <span class="fw-bold text-dark me-4">Số lượng</span>
+                                                <input class="form-control text-center me-10" id="quantity" oninput="ChangeQuantityValue(this)" style="width:90px" type="number" max="999999" maxlength="6" min="0" value="1" />
+                                                <span id="quantityStock" class="text-orange me-4"></span>
+                                                <button class="btn btn-outline-primary me-3" onclick="AddToCart('@product.Id')">Thêm vào giỏ hàng</button>
+                                            </div>
+                                            <hr class="mb-2 mt-2"/>
+                                            <div class="mb-3">
+                                                <span class="fw-bold text-dark" style="font-size: 1rem">Mô tả sản phẩm: @product.Desciption</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">Các sản phẩm bạn có thể thích</div>
+                        <div class="row align-items-center g-0">
+                            @if (listProductSame != null && listProductSame.Any())
+                            {
+                                foreach(Product p in listProductSame)
+                                {
+                                    <div class="col-lg-2 col-md-6 mb-4">
+                                        <a href="@Url.Action("ProductDetails", "Product", new{productID = p.Id})">
+                                            <img class="card-img-top" src="@p.Thumbnail" alt="@p.Name" title="@p.Name">
+                                        </a>
+                                        <div class="card-body text-center">
+                                            <div class="card-title">
+                                                <a href="@Url.Action("ProductDetails", "Product", new{productID = p.Id})" class="text-decoration-none fw-bold" style="color: #446084; font-size: .9em;">@p.Name</a>
+                                            </div>
+                                            <strong class="text-orange" style="font-size: .9em;">@Constants.ConvertCurrency(p.Price)</strong>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    </div>
+                </main>
+            @Html.Partial("_Footer")
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="/js/scripts.js"></script>
+        <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+        const thumbnails = document.querySelectorAll(".thumbnails img");
+        const productImage = document.getElementById("product-image");
+        var currentIndex = 0;
+
+        function updateProductImage(index) {
+            if (index >= 0 && thumbnails[index]) {
+                productImage.src = thumbnails[index].src;
+            }
+        }
+
+        function showImage(index) {
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle("active", i === index);
+            });
+        }
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            updateProductImage(currentIndex);
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            updateProductImage(currentIndex);
+            showImage(currentIndex);
+        });
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener("click", () => {
+                currentIndex = index;
+                updateProductImage(currentIndex);
+                showImage(currentIndex);
+            });
+        });
+
+        var m_sizeID = null;
+        var m_sizeID = null;
+        var productVariantId = null;
+        var maxStock = 0;
+
+        function SelectSize(sizeID) {
+            $('.size-button').removeClass('active');
+            $('#size_' + sizeID).addClass('active');
+            $('.color-button').prop('disabled', true);
+            $('.size-button').prop('disabled', false);
+            @foreach (var pd in listProductDetails)
+            {
+                <text>
+                    if (sizeID == '@pd.sizeId') {
+                        $('#color_' + '@pd.colorID').prop('disabled', false);
+                    }
+                </text>
+            }
+            productVariantId = null
+            m_sizeID = sizeID;
+            if (typeof m_colorID !== 'undefined' && m_colorID != null && m_colorID >= 0) {
+                GetProductVariant(m_colorID, m_sizeID)
+            }
+        }
+
+        function SelectColor(colorID) {
+            $('.color-button').removeClass('active');
+            $('#color_' + colorID).addClass('active');
+            productVariantId = null
+            m_colorID = colorID;
+            if (typeof m_sizeID !== 'undefined' && m_sizeID !== null && m_sizeID > 0) {
+                GetProductVariant(m_colorID, m_sizeID)
+            }
+        }
+
+        function GetProductVariant(color, size) {
+            @foreach (var pd in listProductDetails)
+            {
+                <text>
+                    if (size == '@pd.sizeId' && color == '@pd.colorID') {
+                        productVariantId = '@pd.pId';
+                        document.getElementById('quantity').value = 1;
+                        $('#quantityStock').text('@pd.quantity sản phẩm');
+                        maxStock = @pd.quantity;
+                    }
+                </text>
+            }
+        }
+
+        function isNumeric(value) {
+            // Sử dụng biểu thức chính quy để kiểm tra xem giá trị có phải là số hay không
+            return /^-?\d+$/.test(value);
+        }
+
+        function ChangeQuantityValue(inputElement) {debugger
+            var quantity = inputElement.value;
+            // Kiểm tra giá trị nhập liệu
+            if (!isNumeric(quantity) || parseInt(quantity) < 0) {
+                inputElement.value = 1;
+                return;
+            } else if (maxStock > 0 && quantity >= maxStock) {
+                inputElement.value = maxStock;
+                return;
+            }
+        }
+
+        function AddToCart(shoeId) {
+            if ('@emrSession.userId' < 0)
+            {
+                location.href = '/Account/login';
+                return;
+            }
+
+            const quantity = document.getElementById('quantity').value;
+
+            if (!shoeId || shoeId.trim() == '') {
+                showAlert('Không tồn tại sản phẩm trong cửa hàng', 'warning');
+                return;
+            }
+
+            if (quantity <= 0) {
+                showAlert('Vui lòng nhập số lượng', 'warning');
+                return;
+            }
+
+            if (typeof productVariantId == 'undefined' || productVariantId == null || productVariantId < 0) {
+                showAlert('Vui lòng chọn size và màu', 'warning');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('quantity', quantity);
+            formData.append('shoeVariantId', productVariantId);
+
+            $.ajax({
+                url: "/Shoping/AddToCart",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: async function (data) {
+                    if (data.success) {
+                        await showAlert('Đã thêm vào giỏ hàng thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        await showAlert("Xảy ra lỗi vui lòng thử lại sau", 'error');
+                    }
+                },
+                error: async function (xhr, status, error) {
+                    await showAlert("Xảy ra lỗi vui lòng thử lại sau", 'error');
+                }
+            });
+        }
+    </script>
+    </body>
+</html>
