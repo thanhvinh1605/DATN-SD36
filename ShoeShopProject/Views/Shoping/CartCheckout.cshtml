@@ -241,9 +241,9 @@
 
         });
 
-        function CartCompletion(userID) {
+        function CartCompletion(userID) {debugger
             const cartAmountTotal = document.getElementById("cartAmountTotal").textContent.replace(/[₫,.]/g, '');
-            const totalAmount = parseInt(cartAmountTotal);
+            const totalAmount = parseFloat(cartAmountTotal);
             const userName = document.getElementById("username").value;
             const phone = document.getElementById("phone").value;
             const address = document.getElementById("address").value;

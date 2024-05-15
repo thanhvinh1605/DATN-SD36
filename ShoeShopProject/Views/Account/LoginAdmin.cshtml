@@ -24,7 +24,7 @@
                                 <div class="card-header justify-content-center"><h3 class="fw-light my-4">Đăng nhập quản lý - NEXUS</h3></div>
                                 <div class="card-body">
                                     <!-- Login form-->
-                                    <form>
+                                    <form id="loginForm">
                                         <!-- Form Group (email address)-->
                                         <div class="mb-3">
                                             <label class="small mb-1" for="userName">Tài khoản</label>
@@ -61,6 +61,17 @@
     <script src="/js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+
+            loginForm.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Ngăn chặn form submit mặc định
+                    LoginAdmin(); // Gọi function LoginAdmin khi nhấn Enter
+                }
+            });
+        });
+
         function LoginAdmin() {
             const userName = document.getElementById('userName').value;
             const password = document.getElementById('password').value;

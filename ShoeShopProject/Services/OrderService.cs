@@ -28,7 +28,7 @@ namespace ShoeShopProject.Services
         /// <param name="orderNote"></param>
         /// <param name="paymentMethod"></param>
         /// <returns></returns>
-        public int CartCheckout(Cart cart, int userID, int totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod)
+        public int CartCheckout(Cart cart, int userID, decimal totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod)
         {
             int orderID = -1;
             if (cart != null)
@@ -44,7 +44,7 @@ namespace ShoeShopProject.Services
                     OrderStatus = Constants.NOT_APPROVE_ORDER,
                     PaymentStatus = Constants.NOT_PAYMENT_ORDER,
                     OrderDesc = orderNote,
-                    TotalAmount = Convert.ToDecimal(totalAmount),
+                    TotalAmount = totalAmount,
                     UpdateDate = DateTime.Now
                 };
                 _context.Orders.Add(order);

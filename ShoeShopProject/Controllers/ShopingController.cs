@@ -119,7 +119,7 @@ namespace ShoeShopProject.Controllers
         /// <returns></returns>
         [Route("CartCompletion")]
         [Authorize]
-        public IActionResult CartCompletion(int userID, int totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod)
+        public IActionResult CartCompletion(int userID, decimal totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod)
         {
             // add product to cart
             EmrSession emrSession = new EmrSession(HttpContext);
