@@ -63,7 +63,6 @@ namespace ShoeShopProject.Data
             try
             {
                 AdminSession adminSession = new AdminSession(_httpContext);
-                adminSession.adminID = 3;
                 if (adminSession != null && adminSession.adminID >= 0)
                 {
                     Admin admin = _context.Admins.FirstOrDefault(x => x.Id == adminSession.adminID);
