@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\ShoeShopProject.csproj": {}
+    "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\ShoeShopProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\ShoeShopProject.csproj": {
+    "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\ShoeShopProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\ShoeShopProject.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\ShoeShopProject.csproj",
         "projectName": "ShoeShopProject",
-        "projectPath": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\ShoeShopProject.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\ShoeShopProject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
