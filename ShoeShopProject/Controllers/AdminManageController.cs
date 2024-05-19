@@ -352,5 +352,111 @@ namespace ShoeShopProject.Controllers
         }
 
 
+
+
+        [Route("AddContactMethod")]
+        public IActionResult AddContactMethod(string contactMethod, string contactDesc, IFormFile contactImg)
+        {
+            if (!string.IsNullOrEmpty(contactMethod) && !string.IsNullOrEmpty(contactDesc))
+            {
+                Contact contact = new Contact();
+
+                var imagePath = Path.Combine("wwwroot", "assets", "img", "payment");
+                Directory.CreateDirectory(imagePath);
+
+                string usrImagePath = String.Empty;
+                if (contactImg != null && contactImg.Length > 0)
+                {
+                    string fileNameWithoutExtension = $"payment_{DateTime.Now:yyyyMMdd_HHmmss}";
+                    string fileExtension = Path.GetExtension(contactImg.FileName);
+                    string fileName = $"{fileNameWithoutExtension}{fileExtension}";
+
+                    // Save the image to the directory
+                    imagePath = Path.Combine(imagePath, fileName);
+
+                    usrImagePath = $"/assets/img/payment/{fileName}";
+                    contact.ImageUrl = usrImagePath;
+                }
+
+                contact.ContactName = contactMethod;
+                contact.ContactDescription = contactDesc;
+
+                _context.Contacts.Add(contact);
+                _context.SaveChanges();
+
+                if (contactImg != null && !string.IsNullOrEmpty(imagePath))
+                {
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        contactImg.CopyTo(stream);
+                    }
+                }
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false });
+        }
+
+
+        [Route("DeleteContactMethod")]
+        public IActionResult DeleteContactMethod(int contactId)
+        {
+            Contact contact = _context.Contacts.FirstOrDefault(x => x.Id == contactId);
+            if (contact != null)
+            {
+                _context.Contacts.Remove(contact);
+                _context.SaveChanges();
+
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false });
+        }
+        [Route("UpdateContact")]
+        public IActionResult UpdateContact(int contactId, string contactMethod, string contactDesc, IFormFile contactImg)
+        {
+            var imagePath = Path.Combine("wwwroot", "assets", "img", "account", "profile");
+            Directory.CreateDirectory(imagePath);
+            if (contactId >= 0)
+            {
+
+                Contact contact = _context.Contacts.FirstOrDefault(ct => ct.Id == contactId);
+                // Check same account
+                Contact contact1 = _context.Contacts.FirstOrDefault(ct => ct.ContactName == contactMethod);
+
+                if (contact != null)
+                {
+                    if (contact1 != null && contact.Id != contact1.Id)
+                    {
+                        return Json(new { success = false });
+                    }
+                    string oldImg = contact.ImageUrl;
+                    string contactImgPath = String.Empty;
+                    if (contactImg != null && contactImg.Length > 0)
+                    {
+                        string fileNameWithoutExtension = $"profile_admin_{DateTime.Now:yyyyMMdd_HHmmss}";
+                        string fileExtension = Path.GetExtension(contactImg.FileName);
+                        string fileName = $"{fileNameWithoutExtension}{fileExtension}";
+
+                        // Save the image to the directory
+                        imagePath = Path.Combine(imagePath, fileName);
+
+                        contactImgPath = $"/assets/img/account/profile/{fileName}";
+                        contact.ImageUrl = contactImgPath;
+                    }
+
+                    contact.ContactName = contactMethod;
+                    contact.ContactDescription = contactDesc;
+                    _context.Contacts.Update(contact);
+                    _context.SaveChanges();
+
+                    return Json(new { success = true });
+                }
+            }
+
+            return Json(new { success = false });
+        }
     }
 }
+
