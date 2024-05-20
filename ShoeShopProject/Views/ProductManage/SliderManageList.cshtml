@@ -308,7 +308,10 @@
                 contentType: false,
                 success: async function (data) {
                     if (data.success) {
-                        window.location.reload();
+                        await showAlert('Cập nhật phương thức liên hệ thành công', 'success');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1500);
                     } else {
                         await showAlert("Không cập nhật. vui lòng thử lại.", 'warning');
                     }
@@ -467,6 +470,7 @@
                 contentType: false,
                 success: async function (data) {
                     if (data.success) {
+
                         window.location.reload();
                     } else {
                         await showAlert("Không cập nhật. vui lòng thử lại.", 'warning');
