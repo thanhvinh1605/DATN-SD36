@@ -42,7 +42,7 @@ namespace ShoeShopProject.Services
             var result = (from od in _context.Orders
                           join oi in _context.OrderDetails on od.Id equals oi.OrderId
                           where od.UpdateDate >= stDate && od.UpdateDate <= endDate
-                          select oi.ProductId).ToList();
+                          select oi.Quantity).ToList();
 
             if (result != null && result.Count > 0)
             {

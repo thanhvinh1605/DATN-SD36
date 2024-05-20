@@ -14,11 +14,13 @@ namespace ShoeShopProject.Controllers
     {
         private readonly ILogger<ShopingController> _logger;
         private readonly DBContext _context;
+        private readonly MailServices _mailService;
 
-        public ShopingController(ILogger<ShopingController> logger, DBContext context)
+        public ShopingController(ILogger<ShopingController> logger, DBContext context, MailServices mailService)
         {
             _logger = logger;
             _context=context;
+            _mailService = mailService;
         }
 
         [Route("Cart")]
@@ -101,7 +103,11 @@ namespace ShoeShopProject.Controllers
 				ViewBag.User = user;
                 ViewBag.ListOrderItem = orderItemDetails;
                 ViewBag.PaymentMethod = _context.Payments.FirstOrDefault(p => p.Id == order.PaymentMethod);
-			}
+
+                
+
+                _mailService.SendToEmail(user.Email, "Cảm ơn bạn đã mua hàng tại NEXUS SNEAKER", order, orderItemDetails);
+            }
             
 			return View();
         }

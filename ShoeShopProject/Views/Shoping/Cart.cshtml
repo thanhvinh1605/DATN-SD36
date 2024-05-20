@@ -36,6 +36,7 @@
                                     <table class="table table-borderless mb-0">
                                         <thead class="border-bottom">
                                             <tr class="small text-uppercase text-muted">
+                                                <th class="col-1 text-center" scope="col"></th>
                                                 <th class="col-5" scope="col">Sản phẩm</th>
                                                 <th class="col-2 text-center" scope="col">Giá</th>
                                                 <th class="col-2 text-center" scope="col">Số lượng</th>
@@ -48,6 +49,9 @@
                                             @foreach (CartDetails cart in listCartDetails)
                                             {
                                                 <tr class="border-bottom">
+                                                    <td class="col-1 align-middle">
+                                                        <input type="checkbox" id="checkCart_@cart.productVariantId" name="checkCart" onclick="checkCartChoose()"/>
+                                                    </td>
                                                     <td class="col-5 align-middle">
                                                         <div class="fw-bold d-flex align-items-center">
                                                             <a class="me-3" href="#"><img class="img-fluid" style="width: 5rem" src="@cart.thumbnail"></img></a>
@@ -184,23 +188,38 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            // Lấy danh sách tất cả các phần tử có class 'cart_total_price'
-            const cartTotalPriceElements = document.querySelectorAll('.cart_total_price');
-            var total = 0;
 
-            if (cartTotalPriceElements.length > 0) {
-                cartTotalPriceElements.forEach(element => {
-                    // Lấy nội dung của phần tử
-                    const priceString = element.textContent.trim();
-                    const numberString = priceString.replace(/[₫,.]/g, '');
-                    const priceAmount = parseInt(numberString);
-                    total += priceAmount;
+            function calculateTotal() {
+                const checkCartElements = document.querySelectorAll('input[name="checkCart"]:checked');
+                let total = 0;
+
+                checkCartElements.forEach(element => {
+                    const cartid = element.id.replace("checkCart_", "");
+                    const cartTotalPriceElement = document.getElementById("cart_total_price_" + cartid);
+
+                    if (cartTotalPriceElement) {
+                        const priceString = cartTotalPriceElement.textContent.trim();
+                        const numberString = priceString.replace(/[₫,.]/g, '');
+                        const priceAmount = parseInt(numberString);
+                        total += priceAmount;
+                    }
                 });
 
-                // Hiển thị tổng tại cartAmountTotal
-                var cartAmountTotalElement = document.getElementById("cartAmountTotal");
-                cartAmountTotalElement.textContent = convertCurrency(total); // Định dạng tổng với hai chữ số sau dấu thập phân
+                const cartAmountTotalElement = document.getElementById("cartAmountTotal");
+                if (cartAmountTotalElement) {
+                    cartAmountTotalElement.textContent = convertCurrency(total);
+                }
             }
+
+            // Add event listeners to checkboxes
+            const checkCartCheckboxes = document.querySelectorAll('input[name="checkCart"]');
+            checkCartCheckboxes.forEach(checkbox => {
+                checkbox.checked = true; // Initially check all checkboxes
+                checkbox.addEventListener('change', calculateTotal);
+            });
+
+            // Initial calculation
+            calculateTotal();
             
         });
 

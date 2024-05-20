@@ -131,24 +131,24 @@
                                                             </td> *@
                                                             <td colspan="2" class="align-middle">
                                                                 @* <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="ClearPayment()"><i data-feather="edit"></i></button> *@
-                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" data-bs-toggle="modal" data-bs-target="#updateContactModal"><i data-feather="edit"></i></button>
+                                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" data-bs-toggle="modal" data-bs-target="#updateContactModal_@contact.Id"><i data-feather="edit"></i></button>
                                                                 
                                                                 <!-- Modal-->
-                                                                <div class="modal fade" id="updateContactModal" tabindex="-1" role="dialog" aria-labelledby="updateContactModalTitle" aria-hidden="true">
+                                                                <div class="modal fade" id="updateContactModal_@contact.Id" tabindex="-1" role="dialog" aria-labelledby="updateContactModalTitle_@contact.Id" aria-hidden="true">
                                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title" id="updateContactModalTitle">Sửa liên hệ</h5>
+                                                                                <h5 class="modal-title" id="updateContactModalTitle_@contact.Id">Sửa liên hệ</h5>
                                                                                 <button class="btn-close" type="button" data-bs-dismiss="modal" onclick="Clear()" aria-label="Close"></button>
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <div class="row p-3">
 
                                                                                     <label class="small fw-bold" for="contactMethod">Tên liên hệ</label>
-                                                                                    <input class="form-control mb-2" type="text" id="contactMethod" value="" />
+                                                                                    <input class="form-control mb-2" type="text" id="contactMethod" value="@contact.ContactName" />
 
                                                                                     <label class="small fw-bold" for="contactDesc">Mô tả</label>
-                                                                                    <textarea class="form-control mb-2" id="contactDesc"></textarea>
+                                                                                    <textarea class="form-control mb-2" id="contactDesc">@contact.ContactDescription</textarea>
 
                                                                                     <img class="mb-2" style="max-width: 250px; max-height: 450px; object-fit: contain;" id="addPayViewImg" src="" alt="" />
                                                                                     <input type="file" class="form-control" style="display: none;" id="contactImg" accept="image/*">
