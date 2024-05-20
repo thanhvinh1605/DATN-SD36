@@ -28,7 +28,7 @@ namespace ShoeShopProject.Services
         /// <param name="orderNote"></param>
         /// <param name="paymentMethod"></param>
         /// <returns></returns>
-        public int CartCheckout(Cart cart, int userID, decimal totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod)
+        public int CartCheckout(Cart cart, int userID, decimal totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod, List<string> listCartOrder)
         {
             int orderID = -1;
             if (cart != null)
@@ -55,16 +55,23 @@ namespace ShoeShopProject.Services
                 {
                     foreach (CartItem item in listCartItem)
                     {
-                        OrderDetail orderDetail = new OrderDetail
+                        if (listCartOrder != null && listCartOrder.Count > 0)
                         {
-                            OrderId = order.Id,
-                            ProductId = item.ProductId,
-                            Quantity = item.Quantity,
-                            AmountPrice = item.PriceAmount
-                        };
-                        _context.OrderDetails.Add(orderDetail);
-                        _context.CartItems.Remove(item);
-                        _context.SaveChanges();
+                            List<int> orderIds = listCartOrder.Select(int.Parse).ToList();
+                            if (orderIds.Contains(item.ProductId))
+                            {
+                                OrderDetail orderDetail = new OrderDetail
+                                {
+                                    OrderId = order.Id,
+                                    ProductId = item.ProductId,
+                                    Quantity = item.Quantity,
+                                    AmountPrice = item.PriceAmount
+                                };
+                                _context.OrderDetails.Add(orderDetail);
+                                _context.CartItems.Remove(item);
+                                _context.SaveChanges();
+                            }
+                        }
                     }
                 }
                 orderID = order.Id;

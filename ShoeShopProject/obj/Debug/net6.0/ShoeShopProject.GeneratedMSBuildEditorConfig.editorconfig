@@ -9,143 +9,143 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ShoeShopProject
 build_property.RootNamespace = ShoeShopProject
-build_property.ProjectDir = C:\Users\Admin\Documents\DATN-SD36\ShoeShopProject\
+build_property.ProjectDir = C:\Users\Admin\Documents\shoeshop\ShoeShopProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Admin\Documents\DATN-SD36\ShoeShopProject
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Documents\shoeshop\ShoeShopProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Account/AccountProfile.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Account/AccountProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Account/LoginAdmin.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Account/LoginAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkFkbWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Account/LoginUser.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Account/LoginUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpblVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Account/UserOrderDetails.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Account/UserOrderDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VyT3JkZXJEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Account/UserOrderHistory.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Account/UserOrderHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VyT3JkZXJIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/AccountAdminProfile.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/AccountAdminProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcQWNjb3VudEFkbWluUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/AddAdminAccount.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/AddAdminAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcQWRkQWRtaW5BY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/AdminAccountList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/AdminAccountList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcQWRtaW5BY2NvdW50TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/ContactManageList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/ContactManageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcQ29udGFjdE1hbmFnZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/Dashboard.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/MeDashboard.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/MeDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcTWVEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/SaleHistory.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/SaleHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcU2FsZUhpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/AdminManage/UpdateAdminAccountProfile.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/AdminManage/UpdateAdminAccountProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NYW5hZ2VcVXBkYXRlQWRtaW5BY2NvdW50UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Home/HomePage.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Home/HomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/ProductManage/AddProductManage.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/ProductManage/AddProductManage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1hbmFnZVxBZGRQcm9kdWN0TWFuYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/ProductManage/ProductManageList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/ProductManage/ProductManageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1hbmFnZVxQcm9kdWN0TWFuYWdlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/ProductManage/PropertyManageList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/ProductManage/PropertyManageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1hbmFnZVxQcm9wZXJ0eU1hbmFnZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/ProductManage/SliderManageList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/ProductManage/SliderManageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1hbmFnZVxTbGlkZXJNYW5hZ2VMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/ProductManage/UpdateProductManage.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/ProductManage/UpdateProductManage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdE1hbmFnZVxVcGRhdGVQcm9kdWN0TWFuYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Product/ProductDetails.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Product/ProductDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/SaleManage/MeOrderManageList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/SaleManage/MeOrderManageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU1hbmFnZVxNZU9yZGVyTWFuYWdlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/SaleManage/OrderDetails.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/SaleManage/OrderDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU1hbmFnZVxPcmRlckRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/SaleManage/OrderManageList.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/SaleManage/OrderManageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZU1hbmFnZVxPcmRlck1hbmFnZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shared/Error.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shared/_Footer.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shared/_Header.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shared/_Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shared/_HeaderAdmin.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shared/_HeaderAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shared/_MenuAdmin.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shared/_MenuAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51QWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shoping/Cart.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shoping/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcGluZ1xDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shoping/CartCheckout.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shoping/CartCheckout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcGluZ1xDYXJ0Q2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/Shoping/OrderCompletion.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/Shoping/OrderCompletion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcGluZ1xPcmRlckNvbXBsZXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/_ViewImports.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Documents/DATN-SD36/ShoeShopProject/Views/_ViewStart.cshtml]
+[C:/Users/Admin/Documents/shoeshop/ShoeShopProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -50,7 +50,7 @@
                                             {
                                                 <tr class="border-bottom">
                                                     <td class="col-1 align-middle">
-                                                        <input type="checkbox" id="checkCart_@cart.productVariantId" name="checkCart" onclick="checkCartChoose()"/>
+                                                        <input type="checkbox" id="checkCart_@cart.productVariantId" name="checkCart"/>
                                                     </td>
                                                     <td class="col-5 align-middle">
                                                         <div class="fw-bold d-flex align-items-center">
@@ -83,7 +83,10 @@
                                         </tbody>
                                     </table>
                                     <div class="mb-2 mt-4 text-center align-middle fw-bold">
-                                        <a class="btn btn-black" href="@Url.Action("CartCheckout", "Shoping")"> TIẾN HÀNH THANH TOÁN </a>
+                                        <button class="btn btn-black" onclick="CartCheckout()"> TIẾN HÀNH THANH TOÁN </button>
+                                        <form id="cartForm" action="/Shoping/CartCheckout" method="post">
+                                            <input type="hidden" id="listId" name="listId" value="">
+                                        </form>
                                     </div>
                                 </div>
                             }
@@ -227,6 +230,26 @@
             // Format số với dấu phân cách hàng nghìn và ký hiệu tiền tệ "₫"
             return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "₫";
         }
+
+        function CartCheckout() {
+            const checkCartElements = document.querySelectorAll('input[name="checkCart"]:checked');
+            const cartid = []; // Initialize cartid as an array
+
+            checkCartElements.forEach(element => {
+                cartid.push(element.id.replace("checkCart_", ""));
+            });
+
+            if (cartid.length <= 0) {
+                showAlert('Vui lòng chọn ít nhất một sản phẩm', 'warning');
+            } else {
+                // Set the value of the hidden input field before submitting the form
+                document.getElementById("listId").value = cartid.join(',');
+
+                // Submit the form
+                document.getElementById("cartForm").submit();
+            }
+        }
+        
     </script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using ShoeShopProject.Data;
 using ShoeShopProject.Models;
 using ShoeShopProject.Services;
@@ -53,28 +54,54 @@ namespace ShoeShopProject.Controllers
             return View();
         }
 
+        [HttpPost]
         [Route("CartCheckout")]
         [Authorize]
-        public IActionResult CartCheckout()
+        public IActionResult CartCheckout(string listId)
         {
-            ServiceMapping mapping = new ServiceMapping(_context, HttpContext);
-            mapping.MappingHeader(this);
-
-            // add product to cart
-            EmrSession emrSession = new EmrSession(HttpContext);
-            int userID = emrSession.userId;
-            if (userID >= 0)
+            if (!string.IsNullOrEmpty(listId))
             {
-                User user = _context.Users.FirstOrDefault(u => u.Id == userID);
-                ViewBag.User = user;
+                string[] idArray = listId.Split(",");
+                List<string> listCartOrder = new List<string>(idArray);
 
-                CartService cartService = new CartService(_context);
-                List<CartDetails> listCartDetails = cartService.GetUserCartDetails(userID);
-                ViewBag.ListCartDetails = listCartDetails;
+                ServiceMapping mapping = new ServiceMapping(_context, HttpContext);
+                mapping.MappingHeader(this);
 
-                PropertyService propertyService = new PropertyService(_context);
-                List<Payment> listPaymentMethod = propertyService.GetAllPaymentMethod();
-                ViewBag.ListPaymentMethod = listPaymentMethod;
+                // add product to cart
+                EmrSession emrSession = new EmrSession(HttpContext);
+                int userID = emrSession.userId;
+                if (userID >= 0)
+                {
+                    User user = _context.Users.FirstOrDefault(u => u.Id == userID);
+                    ViewBag.User = user;
+
+                    CartService cartService = new CartService(_context);
+                    List<CartDetails> listCartDetails = cartService.GetUserCartDetails(userID);
+
+                    if (listCartOrder.Count > 0)
+                    {
+                        // Create a list to store IDs as integers
+                        List<int> orderIds = listCartOrder.Select(int.Parse).ToList();
+
+                        // Use a reverse loop to safely remove items from the list
+                        for (int i = listCartDetails.Count - 1; i >= 0; i--)
+                        {
+                            if (!orderIds.Contains(listCartDetails[i].productVariantId))
+                            {
+                                listCartDetails.RemoveAt(i);
+                            }
+                        }
+                    }
+
+                    ViewBag.ListCartDetails = listCartDetails;
+                    ViewBag.ListId = listId;
+
+                    PropertyService propertyService = new PropertyService(_context);
+                    List<Payment> listPaymentMethod = propertyService.GetAllPaymentMethod();
+                    ViewBag.ListPaymentMethod = listPaymentMethod;
+
+                }
+
             }
 
             return View();
@@ -125,25 +152,32 @@ namespace ShoeShopProject.Controllers
         /// <returns></returns>
         [Route("CartCompletion")]
         [Authorize]
-        public IActionResult CartCompletion(int userID, decimal totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod)
+        public IActionResult CartCompletion(int userID, decimal totalAmount, string userName, string phone, string address, string orderNote, int paymentMethod, string listId)
         {
-            // add product to cart
-            EmrSession emrSession = new EmrSession(HttpContext);
-            int userLoginID = emrSession.userId;
-
-            if (userLoginID == userID)
+            if (!string.IsNullOrEmpty(listId))
             {
-                Cart cart = _context.Carts.FirstOrDefault(c => c.UserId == userID);
-                if (cart != null)
+                string[] idArray = listId.Split(",");
+                List<string> listCartOrder = new List<string>(idArray);
+
+                // add product to cart
+                EmrSession emrSession = new EmrSession(HttpContext);
+                int userLoginID = emrSession.userId;
+
+                if (userLoginID == userID)
                 {
-                    OrderService orderService = new OrderService(_context);
-                    int orderID = orderService.CartCheckout(cart, userID, totalAmount, userName, phone, address, orderNote, paymentMethod);
-                    if (orderID >= 0)
+                    Cart cart = _context.Carts.FirstOrDefault(c => c.UserId == userID);
+                    if (cart != null)
                     {
-                        return Json(new { success = true, orderID = orderID });
+                        OrderService orderService = new OrderService(_context);
+                        int orderID = orderService.CartCheckout(cart, userID, totalAmount, userName, phone, address, orderNote, paymentMethod, listCartOrder);
+                        if (orderID >= 0)
+                        {
+                            return Json(new { success = true, orderID = orderID });
+                        }
                     }
                 }
             }
+            
             return Json(new { success = false });
         }
 

@@ -1,699 +1,699 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\demo\\chart-area-demo.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\demo\\chart-area-demo.js",
       "PackagePath": "staticwebassets\\assets\\demo\\chart-area-demo.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\demo\\chart-bar-demo.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\demo\\chart-bar-demo.js",
       "PackagePath": "staticwebassets\\assets\\demo\\chart-bar-demo.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\demo\\chart-pie-demo.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\demo\\chart-pie-demo.js",
       "PackagePath": "staticwebassets\\assets\\demo\\chart-pie-demo.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Black.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Black.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-Black.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-BlackItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-BlackItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-BlackItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Bold.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Bold.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-Bold.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-BoldItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-BoldItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-BoldItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraBold.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraBold.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-ExtraBold.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraBoldItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraBoldItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-ExtraBoldItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraLight.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraLight.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-ExtraLight.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraLightItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ExtraLightItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-ExtraLightItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Light.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Light.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-Light.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-LightItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-LightItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-LightItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Medium.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Medium.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-Medium.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-MediumItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-MediumItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-MediumItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Regular.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Regular.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-Regular.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-RegularItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-RegularItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-RegularItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-SemiBold.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-SemiBold.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-SemiBold.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-SemiBoldItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-SemiBoldItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-SemiBoldItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Thin.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-Thin.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-Thin.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ThinItalic.otf",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\Metropolis-ThinItalic.otf",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\Metropolis-ThinItalic.otf"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\SIL Open Font License.txt",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\fonts\\metropolis\\SIL Open Font License.txt",
       "PackagePath": "staticwebassets\\assets\\fonts\\metropolis\\SIL Open Font License.txt"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_4_20240325_004819.jpeg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_4_20240325_004819.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_4_20240325_004819.jpeg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_175347.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_175347.png",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240324_175347.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_181222.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_181222.png",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240324_181222.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_233618.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_233618.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240324_233618.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_233946.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240324_233946.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240324_233946.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240326_204739.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240326_204739.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240326_204739.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240326_204817.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240326_204817.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240326_204817.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240326_210317.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\account\\profile\\profile_admin_20240326_210317.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\account\\profile\\profile_admin_20240326_210317.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\backgrounds\\bg-angles.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\backgrounds\\bg-angles.svg",
       "PackagePath": "staticwebassets\\assets\\img\\backgrounds\\bg-angles.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\backgrounds\\bg-pattern-shapes.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\backgrounds\\bg-pattern-shapes.png",
       "PackagePath": "staticwebassets\\assets\\img\\backgrounds\\bg-pattern-shapes.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\backgrounds\\bg-waves.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\backgrounds\\bg-waves.svg",
       "PackagePath": "staticwebassets\\assets\\img\\backgrounds\\bg-waves.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\QR.jpeg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\QR.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\QR.jpeg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-bottom.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-bottom.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\cards\\card-img-bottom.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-left.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-left.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\cards\\card-img-left.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-overlay.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-overlay.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\cards\\card-img-overlay.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-right.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-right.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\cards\\card-img-right.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-top.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\cards\\card-img-top.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\cards\\card-img-top.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\demo-logo.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\demo-logo.svg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\demo-logo.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\demo-ocean-lg.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\demo-ocean-lg.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\demo-ocean-lg.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\demo-ocean-sm.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\demo-ocean-sm.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\demo-ocean-sm.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\pug.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\pug.svg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\pug.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\qr_code.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\qr_code.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\qr_code.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\ssss.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\demo\\ssss.svg",
       "PackagePath": "staticwebassets\\assets\\img\\demo\\ssss.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\favicon.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\favicon.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\400-error-bad-request.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\400-error-bad-request.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\400-error-bad-request.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\401-error-unauthorized.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\401-error-unauthorized.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\401-error-unauthorized.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\403-error-forbidden.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\403-error-forbidden.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\403-error-forbidden.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\404-error-with-a-cute-animal.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\404-error-with-a-cute-animal.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\404-error-with-a-cute-animal.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\404-error.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\404-error.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\404-error.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\500-internal-server-error.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\500-internal-server-error.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\500-internal-server-error.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\503-error-service-unavailable.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\503-error-service-unavailable.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\503-error-service-unavailable.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\504-error-gateway-timeout.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\504-error-gateway-timeout.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\504-error-gateway-timeout.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\CREDITS.md",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\CREDITS.md",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\CREDITS.md"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\Logo.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\Logo.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\Logo.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\at-work.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\at-work.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\at-work.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\browser-stats.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\browser-stats.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\browser-stats.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\data-report.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\data-report.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\data-report.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\icons8-zalo.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\icons8-zalo.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\icons8-zalo.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\problem-solving.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\problem-solving.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\problem-solving.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\processing.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\processing.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\processing.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-1.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-1.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\profiles\\profile-1.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-2.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-2.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\profiles\\profile-2.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-3.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-3.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\profiles\\profile-3.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-4.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-4.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\profiles\\profile-4.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-5.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-5.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\profiles\\profile-5.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-6.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\profiles\\profile-6.png",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\profiles\\profile-6.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\statistics.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\statistics.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\statistics.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\team-spirit.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\team-spirit.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\team-spirit.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\windows.svg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\illustrations\\windows.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\windows.svg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\payment\\payment_20240513_004800.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\payment\\payment_20240513_004800.png",
       "PackagePath": "staticwebassets\\assets\\img\\payment\\payment_20240513_004800.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\payment\\payment_20240513_010239.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\payment\\payment_20240513_010239.png",
       "PackagePath": "staticwebassets\\assets\\img\\payment\\payment_20240513_010239.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\air-jordan-1-zoom-cmft-patent-chicago-ct0979-610-600x600.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\air-jordan-1-zoom-cmft-patent-chicago-ct0979-610-600x600.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\air-jordan-1-zoom-cmft-patent-chicago-ct0979-610-600x600.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\converse-run-star-hike-high-white-166799c-600x600.jpeg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\converse-run-star-hike-high-white-166799c-600x600.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\converse-run-star-hike-high-white-166799c-600x600.jpeg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240324_234914.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240324_234914.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240324_234914.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240324_234932.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240324_234932.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240324_234932.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240326_205240.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240326_205240.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240326_205240.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_012910.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_012910.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_012910.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_013000.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_013000.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_013000.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_013301.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_013301.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_013301.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_013715.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_013715.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_013715.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_014245.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_014245.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_014245.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_014457.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_014457.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_014457.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_014650.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_014650.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_014650.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015445.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015445.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_015445.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015613.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015613.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_015613.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015741.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015741.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_015741.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015905.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_015905.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_015905.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020026.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020026.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020026.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020151.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020151.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020151.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020301.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020301.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020301.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020404.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020404.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020404.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020457.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020457.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020457.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020544.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020544.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020544.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020655.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020655.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020655.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020749.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\products\\thumbnails\\product_image_20240403_020749.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\thumbnails\\product_image_20240403_020749.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\banner-tet.png",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\banner-tet.png",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\banner-tet.png"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\sale-cuoimua.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\sale-cuoimua.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\sale-cuoimua.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240326_200655.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240326_200655.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\slider_20240326_200655.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240326_201303.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240326_201303.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\slider_20240326_201303.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240326_201335.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240326_201335.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\slider_20240326_201335.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240331_185544.jpg",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\assets\\img\\slider\\slider_20240331_185544.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\slider_20240331_185544.jpg"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\css\\login.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\css\\styles.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\add-program.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\add-program.js",
       "PackagePath": "staticwebassets\\js\\add-program.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\datatables\\datatables-simple-demo.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\datatables\\datatables-simple-demo.js",
       "PackagePath": "staticwebassets\\js\\datatables\\datatables-simple-demo.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\include-html.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\include-html.min.js",
       "PackagePath": "staticwebassets\\js\\include-html.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\jquery-3.6.0.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\jquery-3.6.0.min.js",
       "PackagePath": "staticwebassets\\js\\jquery-3.6.0.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\litepicker.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\litepicker.js",
       "PackagePath": "staticwebassets\\js\\litepicker.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\login.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\markdown.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\markdown.js",
       "PackagePath": "staticwebassets\\js\\markdown.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\scripts.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\scripts.js",
       "PackagePath": "staticwebassets\\js\\scripts.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\js\\toasts.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\js\\toasts.js",
       "PackagePath": "staticwebassets\\js\\toasts.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

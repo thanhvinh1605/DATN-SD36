@@ -411,3 +411,4 @@ C:\Users\Admin\Documents\DATN-SD36-main\ShoeShopProject\obj\Debug\net6.0\refint\
 C:\Users\Admin\Documents\DATN-SD36-main\ShoeShopProject\obj\Debug\net6.0\ShoeShopProject.pdb
 C:\Users\Admin\Documents\DATN-SD36-main\ShoeShopProject\obj\Debug\net6.0\ShoeShopProject.genruntimeconfig.cache
 C:\Users\Admin\Documents\DATN-SD36-main\ShoeShopProject\obj\Debug\net6.0\ref\ShoeShopProject.dll
+C:\Users\Admin\Documents\shoeshop\ShoeShopProject\bin\Debug\net6.0\Newtonsoft.Json.dll

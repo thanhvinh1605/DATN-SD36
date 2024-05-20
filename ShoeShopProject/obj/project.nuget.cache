@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T5nXX3k/uX0AvhdHGdcvkKCooNQAq7CTrOINhNnuO5w7MGbTA0d5QGSV6H8I2oFW/PFlU3tdvd1d8MZ541gtow==",
+  "dgSpecHash": "PP+cux8s2S6AV4FqkFjweFrr0+zaufIci9pNZ6P6kpPq+YWq4nJQmzvwDzx518YZkG7Tj1L18Dy5CA7E0bOpzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\DATN-SD36\\ShoeShopProject\\ShoeShopProject.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\shoeshop\\ShoeShopProject\\ShoeShopProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.1.2\\microsoft.aspnetcore.authentication.2.1.2.nupkg.sha512",
@@ -52,6 +52,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\pagedlist\\1.17.0\\pagedlist.1.17.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\pagedlist.mvc\\4.5.0\\pagedlist.mvc.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",

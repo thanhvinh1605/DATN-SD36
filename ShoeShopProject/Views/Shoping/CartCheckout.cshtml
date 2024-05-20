@@ -2,6 +2,7 @@
 @using ShoeShopProject.ViewModels
 @{
     List<CartDetails> listCartDetails = ViewBag.ListCartDetails;
+    String listId = ViewBag.ListId;
     User user = ViewBag.User;
     List<Payment> listPaymentMethod = ViewBag.ListPaymentMethod;
 }
@@ -241,7 +242,7 @@
 
         });
 
-        function CartCompletion(userID) {debugger
+        function CartCompletion(userID) {
             const cartAmountTotal = document.getElementById("cartAmountTotal").textContent.replace(/[₫,.]/g, '');
             const totalAmount = parseFloat(cartAmountTotal);
             const userName = document.getElementById("username").value;
@@ -291,6 +292,7 @@
             formData.append("address", address);
             formData.append("orderNote", ordernote);
             formData.append("paymentMethod", paymentMethod);
+            formData.append("listId", '@listId');
             
             $.ajax({
                 url: "/Shoping/CartCompletion",
